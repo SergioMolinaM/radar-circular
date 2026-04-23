@@ -1,38 +1,73 @@
-# Radar Circular
+# React + TypeScript + Vite
 
-Herramienta web SaaS de inteligencia para el cumplimiento de la **Ley REP** (Responsabilidad Extendida del Productor) en Chile.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Stack
+Currently, two official plugins are available:
 
-- React + Vite
-- Tailwind CSS
-- Fuentes: Fraunces (títulos) + Inter (texto)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Paleta de colores
+## React Compiler
 
-| Token | Color | Hex |
-|-------|-------|-----|
-| `musgo` | Verde musgo (principal) | `#5B7C5B` |
-| `crema` | Crema cálido (fondo) | `#FAF7F0` |
-| `cafe` | Marrón cálido (texto) | `#2C2416` |
-| `dato-publico` | Verde brillante | `#2D7A4F` |
-| `dato-sectorial` | Azul apagado | `#3B5F8A` |
-| `dato-interno` | Púrpura oscuro | `#6B3E7A` |
-| `dato-proyeccion` | Gris medio | `#6B6B6B` |
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Desarrollo
+## Expanding the ESLint configuration
 
-```bash
-npm install
-npm run dev
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## Estructura
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```
-src/
-  components/   # Componentes reutilizables
-  pages/        # Las 7 pantallas del MVP
-  data/         # Datos del MVP, separados por tipo
-  assets/       # Imágenes y recursos estáticos
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```

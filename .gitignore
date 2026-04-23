@@ -7,32 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies
-node_modules/
-
-# Build
-dist/
-dist-ssr/
-
-# Environment
-.env
-.env.local
-.env.*.local
+node_modules
+dist
+dist-ssr
 *.local
 
-# IDE
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Confidencial — material MEP REP
-docs/antecedentes/
