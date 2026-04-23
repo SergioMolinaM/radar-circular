@@ -7,6 +7,7 @@ export default {
         musgo: '#5B7C5B',
         crema: '#FAF7F0',
         cafe: '#2C2416',
+        prorep: '#3B7A8A',
         dato: {
           publico: '#2D7A4F',
           sectorial: '#3B5F8A',
