@@ -1,7 +1,7 @@
 // src/components/Sidebar.tsx
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Home, BarChart3, Info, Menu, X, Shield, FileText } from 'lucide-react'
+import { Home, BarChart3, Info, Menu, X, Shield, FileText, BookOpen } from 'lucide-react'
 import { productosPrioritarios } from '../data/productos-prioritarios'
 
 const navItems = [
@@ -9,6 +9,7 @@ const navItems = [
   { to: '/panorama', label: 'Panorama REP', icon: BarChart3 },
   { to: '/fiscalizacion', label: 'Fiscalización', icon: Shield },
   { to: '/analisis', label: 'Análisis', icon: FileText },
+  { to: '/glosario', label: 'Glosario', icon: BookOpen },
 ]
 
 export function Sidebar() {
