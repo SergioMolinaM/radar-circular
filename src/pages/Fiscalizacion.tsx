@@ -147,6 +147,31 @@ export function Fiscalizacion() {
           ))}
         </div>
       </div>
+
+      {/* SISREP */}
+      <div className="p-5 rounded-xl border border-stone-800">
+        <p className="text-sm font-medium text-stone-300 mb-2">SISREP — Sistema de Reporte REP</p>
+        <p className="text-sm text-stone-400 mb-3">
+          Operativo desde enero de 2025 (Resolución Exenta 2279/2024 de la SMA). Los Sistemas de Gestión
+          deben reportar mensualmente las operaciones de manejo de residuos, segregadas por tipo de residuo,
+          operación específica y gestor. Los informes de cumplimiento se generan a partir de estos reportes
+          mensuales y deben ser validados por un auditor externo.
+        </p>
+        <div className="space-y-1 text-sm text-stone-400">
+          <p>· Registro público de SIG habilitados con productores que los componen</p>
+          <p>· Trazabilidad desde generación hasta disposición final</p>
+          <p>· Garantías de cumplimiento reguladas (R.E. 863/2021, 242/2022, 433/2024, 434/2024)</p>
+          <p>· 8 garantías devueltas a SGC que cumplieron metas</p>
+        </div>
+        <a
+          href="https://portal.sma.gob.cl/index.php/sma-pone-a-disposicion-plataforma-de-reporte-para-dar-cumplimiento-a-la-ley-rep/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-stone-400 hover:text-stone-200 mt-3 transition-colors"
+        >
+          Más información en Portal SMA <ExternalLink size={12} />
+        </a>
+      </div>
     </div>
   )
 }

@@ -44,6 +44,24 @@ const fuentes = [
     url: 'https://vu.mma.gob.cl/',
     descripcion: 'Portal de declaración de productos prioritarios puestos en mercado. Resolución Exenta N°4771 (julio 2025) requiere declaración obligatoria.',
   },
+  {
+    nombre: 'SISREP',
+    org: 'Superintendencia del Medio Ambiente',
+    url: 'https://portal.sma.gob.cl/index.php/sma-pone-a-disposicion-plataforma-de-reporte-para-dar-cumplimiento-a-la-ley-rep/',
+    descripcion: 'Sistema de Reporte REP. Operativo desde enero 2025. Registro público de SIG habilitados con productores que los componen. Reportes mensuales, informes de cumplimiento, auditor externo.',
+  },
+  {
+    nombre: 'IEMA 2024',
+    org: 'Ministerio del Medio Ambiente (SINIA)',
+    url: 'https://sinia.mma.gob.cl/',
+    descripcion: 'Informe del Estado del Medio Ambiente 2024. Plataforma interactiva con más de 250 indicadores en 9 capítulos, incluyendo economía circular y gestión de residuos.',
+  },
+  {
+    nombre: 'ANIR / Kyklos',
+    org: 'Asociación Nacional de la Industria del Reciclaje',
+    url: 'https://anir.cl/',
+    descripcion: 'Estudio Comparativo de Materiales (anual desde 2018). Datos de MDP, MGP, CTIP y tasas de valorización por material. Incluye Clúster Automotriz (ALU, BFU, NFU) y Envases y Embalajes.',
+  },
 ]
 
 const estudios = [
