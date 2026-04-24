@@ -15,6 +15,10 @@ const contextoAdicional: Record<string, { items: { titulo: string; texto: string
   alu: {
     items: [
       {
+        titulo: 'Cifras actuales (pre-decreto)',
+        texto: 'Según el Estudio ANIR/Kyklos 2024, los aceites lubricantes usados ya tienen una tasa de valorización del 47,6%, con 57.438 toneladas gestionadas sobre 120.748 disponibles. La industria de re-refinación opera con alta capacidad antes de la entrada en vigor de las metas REP.',
+      },
+      {
         titulo: 'Estado del decreto',
         texto: 'El DS 47/2023 fue publicado en el Diario Oficial en noviembre de 2024. Las obligaciones de recolección y valorización entran en vigor en enero de 2027, dando un plazo de más de dos años a los productores para constituir Sistemas de Gestión y obtener las autorizaciones correspondientes.',
       },
@@ -34,6 +38,10 @@ const contextoAdicional: Record<string, { items: { titulo: string; texto: string
   },
   bfu: {
     items: [
+      {
+        titulo: 'Cifras actuales (pre-decreto)',
+        texto: 'Las baterías fuera de uso alcanzaron 74,5% de valorización en 2023 y 52% en 2024 (ANIR/Kyklos). El alto valor del plomo facilita el reciclaje informal y formal. Es el producto prioritario con mayor tasa de valorización antes de tener decreto vigente.',
+      },
       {
         titulo: 'Estado del decreto',
         texto: 'La consulta pública del anteproyecto de decreto de metas para Baterías Fuera de Uso cerró en abril de 2026. El MMA trabaja en la elaboración del decreto definitivo. Las baterías de menos de 5 kg quedan cubiertas por el decreto de P+AEE (pilas).',
