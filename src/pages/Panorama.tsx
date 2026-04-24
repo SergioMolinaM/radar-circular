@@ -2,6 +2,7 @@
 import { tonelaje2024 } from '../data/metas-eye'
 import { TonelajeChart } from '../components/TonelajeChart'
 import { CumplimientoTable } from '../components/CumplimientoTable'
+import { MetasLineChart } from '../components/MetasLineChart'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -83,6 +84,16 @@ export function Panorama() {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* Trayectoria */}
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Trayectoria de metas DS 12/2020</h3>
+        <p className="text-sm text-stone-400 mb-4">
+          La pendiente de exigencia crece cada año. Para 2035, las metas domiciliarias exigen
+          entre 45% (plástico) y 70% (papel y cartón) de valorización.
+        </p>
+        <MetasLineChart />
       </div>
 
       {/* Cumplimiento de metas */}

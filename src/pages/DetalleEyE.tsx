@@ -4,6 +4,7 @@ import { metasDomiciliarias, metasNoDomiciliarias, tonelaje2024 } from '../data/
 import { MetasTable } from '../components/MetasTable'
 import { CumplimientoTable } from '../components/CumplimientoTable'
 import { TonelajeChart } from '../components/TonelajeChart'
+import { MetasLineChart } from '../components/MetasLineChart'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -102,6 +103,17 @@ export function DetalleEyE() {
             nota="Año 9 en adelante (2032+): P&C 85%, Plástico 55%, Metal 70%"
           />
         </div>
+      </div>
+
+      {/* Trayectoria visual */}
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Trayectoria de metas al 2035</h3>
+        <p className="text-sm text-stone-400 mb-4">
+          Las curvas muestran la pendiente de exigencia que enfrenta el sistema.
+          Para domiciliarios, el cartón para líquidos parte con la misma meta que papel y cartón
+          pero termina 10 puntos abajo — reflejo de la dificultad técnica del material multicapa.
+        </p>
+        <MetasLineChart />
       </div>
 
       {/* Cumplimiento */}
