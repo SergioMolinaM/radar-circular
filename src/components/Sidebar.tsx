@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Home, BarChart3, Info, Menu, X, Shield, FileText, BookOpen, CalendarClock, Scale, Building2 } from 'lucide-react'
 import { productosPrioritarios } from '../data/productos-prioritarios'
+import { RadarLogo } from './RadarLogo'
 
 const datosItems = [
   { to: '/panorama', label: 'Panorama REP', icon: BarChart3 },
@@ -22,24 +23,37 @@ export function Sidebar() {
   const [open, setOpen] = useState(false)
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-colors ${
+    `flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-150 ${
       isActive
-        ? 'bg-stone-800 text-stone-100'
-        : 'text-stone-400 hover:text-stone-200 hover:bg-stone-900'
+        ? 'font-medium'
+        : 'hover:translate-x-0.5'
     }`
+
+  const linkStyle = (isActive: boolean) => ({
+    backgroundColor: isActive ? 'var(--bg-elevated)' : 'transparent',
+    color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
+  })
 
   const handleNav = () => setOpen(false)
 
   const sidebarContent = (
     <>
       <div className="px-4 pt-2 flex items-center justify-between">
-        <div>
-          <h1 className="text-lg font-bold tracking-tight">Radar Circular</h1>
-          <p className="text-xs text-stone-500 mt-0.5">Inteligencia Ley REP Chile</p>
+        <div className="flex items-center gap-3">
+          <RadarLogo size={32} />
+          <div>
+            <h1 className="text-lg font-bold tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+              Radar Circular
+            </h1>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              Inteligencia Ley REP Chile
+            </p>
+          </div>
         </div>
         <button
           onClick={() => setOpen(false)}
-          className="md:hidden text-stone-400 hover:text-stone-200"
+          className="md:hidden hover:opacity-80 transition-opacity"
+          style={{ color: 'var(--text-secondary)' }}
         >
           <X size={20} />
         </button>
@@ -47,7 +61,13 @@ export function Sidebar() {
 
       {/* Home */}
       <nav className="flex flex-col gap-1">
-        <NavLink to="/" className={linkClass} end onClick={handleNav}>
+        <NavLink
+          to="/"
+          className={linkClass}
+          style={({ isActive }) => linkStyle(isActive)}
+          end
+          onClick={handleNav}
+        >
           <Home size={18} />
           Inicio
         </NavLink>
@@ -55,11 +75,17 @@ export function Sidebar() {
 
       {/* Datos */}
       <div className="flex flex-col gap-1">
-        <span className="px-4 text-xs font-medium text-stone-500 uppercase tracking-wider mb-1">
+        <span className="px-4 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
           Datos
         </span>
         {datosItems.map((item) => (
-          <NavLink key={item.to} to={item.to} className={linkClass} onClick={handleNav}>
+          <NavLink
+            key={item.to}
+            to={item.to}
+            className={linkClass}
+            style={({ isActive }) => linkStyle(isActive)}
+            onClick={handleNav}
+          >
             <item.icon size={18} />
             {item.label}
           </NavLink>
@@ -68,7 +94,7 @@ export function Sidebar() {
 
       {/* Productos Prioritarios */}
       <div className="flex flex-col gap-1">
-        <span className="px-4 text-xs font-medium text-stone-500 uppercase tracking-wider mb-1">
+        <span className="px-4 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
           Productos Prioritarios
         </span>
         {productosPrioritarios.map((pp) => (
@@ -76,24 +102,28 @@ export function Sidebar() {
             key={pp.id}
             to={`/producto/${pp.id}`}
             className={linkClass}
+            style={({ isActive }) => linkStyle(isActive)}
             onClick={handleNav}
           >
-            <span
-              className="w-2.5 h-2.5 rounded-full shrink-0"
-              style={{ backgroundColor: pp.color }}
-            />
-            {pp.nombreCorto}
+            <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: pp.color }} />
+            <span className="truncate">{pp.nombre}</span>
           </NavLink>
         ))}
       </div>
 
       {/* Referencia */}
       <div className="flex flex-col gap-1">
-        <span className="px-4 text-xs font-medium text-stone-500 uppercase tracking-wider mb-1">
+        <span className="px-4 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
           Referencia
         </span>
         {referenciaItems.map((item) => (
-          <NavLink key={item.to} to={item.to} className={linkClass} onClick={handleNav}>
+          <NavLink
+            key={item.to}
+            to={item.to}
+            className={linkClass}
+            style={({ isActive }) => linkStyle(isActive)}
+            onClick={handleNav}
+          >
             <item.icon size={18} />
             {item.label}
           </NavLink>
@@ -101,7 +131,7 @@ export function Sidebar() {
       </div>
 
       <div className="mt-auto">
-        <p className="px-4 mt-3 text-xs text-stone-600">
+        <p className="px-4 mt-3 text-xs" style={{ color: 'var(--text-muted)' }}>
           Tercera Letra · 2026
         </p>
       </div>
@@ -111,11 +141,15 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile header */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-40 bg-stone-950 border-b border-stone-800 px-4 py-3 flex items-center gap-3">
-        <button onClick={() => setOpen(true)} className="text-stone-400 hover:text-stone-200">
+      <div
+        className="md:hidden fixed top-0 left-0 right-0 z-40 px-4 py-3 flex items-center gap-3"
+        style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid var(--border)' }}
+      >
+        <button onClick={() => setOpen(true)} className="hover:opacity-80 transition-opacity" style={{ color: 'var(--text-secondary)' }}>
           <Menu size={22} />
         </button>
-        <span className="font-bold text-sm">Radar Circular</span>
+        <RadarLogo size={24} />
+        <span className="font-bold text-sm" style={{ fontFamily: "'DM Serif Display', serif" }}>Radar Circular</span>
       </div>
 
       {/* Mobile overlay */}
@@ -130,11 +164,14 @@ export function Sidebar() {
       <aside
         className={`
           fixed md:sticky top-0 left-0 z-50 h-screen w-64
-          bg-stone-950 border-r border-stone-800
           p-4 flex flex-col gap-6 overflow-y-auto
           transition-transform duration-200
           ${open ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         `}
+        style={{
+          backgroundColor: 'var(--bg-surface)',
+          borderRight: '1px solid var(--border)',
+        }}
       >
         {sidebarContent}
       </aside>
