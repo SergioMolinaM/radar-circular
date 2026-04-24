@@ -6,6 +6,7 @@ import { CumplimientoTable } from '../components/CumplimientoTable'
 import { TonelajeChart } from '../components/TonelajeChart'
 import { MetasLineChart } from '../components/MetasLineChart'
 import { operacionEyENoDom, operacionEyEDom, datosOperativosGRANSIC } from '../data/operacion-eye'
+import { FuenteDatos } from '../components/FuenteDatos'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -92,6 +93,7 @@ export function DetalleEyE() {
             </div>
           </div>
         </div>
+        <FuenteDatos fuente="País Circular, diciembre 2024" tipo="sectorial" fecha="Diciembre 2024" />
       </div>
 
       {/* Datos operativos GRANSIC */}
@@ -122,6 +124,12 @@ export function DetalleEyE() {
           </div>
         </div>
       </div>
+      <FuenteDatos
+        fuente="País Circular · ProREP · GIRO · ReSimple"
+        tipo="sectorial"
+        fecha="Julio-diciembre 2024"
+        nota="Datos auto-reportados por cada SIG a medios de prensa"
+      />
 
       {/* KPIs */}
       <div>
@@ -146,6 +154,7 @@ export function DetalleEyE() {
           </div>
         </div>
         <TonelajeChart />
+        <FuenteDatos fuente="Estudio Kyklos 2024 (encargado por ANIR-ReSimple)" tipo="estimacion" fecha="Abril 2025" />
       </div>
 
       {/* Metas progresivas */}
@@ -176,6 +185,7 @@ export function DetalleEyE() {
           pero termina 10 puntos abajo — reflejo de la dificultad técnica del material multicapa.
         </p>
         <MetasLineChart />
+        <FuenteDatos fuente="Decreto Supremo 12/2020, Tablas de metas" tipo="oficial" />
       </div>
 
       {/* Cumplimiento */}
@@ -186,6 +196,12 @@ export function DetalleEyE() {
           formal contabiliza.
         </p>
         <CumplimientoTable />
+        <FuenteDatos
+          fuente="Estudio Kyklos 2024, Cuadro 14"
+          tipo="estimacion"
+          fecha="Abril 2025"
+          nota="Los escenarios son simulaciones basadas en datos estimados, no mediciones oficiales de la SMA"
+        />
       </div>
     </div>
   )

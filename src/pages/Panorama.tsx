@@ -3,6 +3,7 @@ import { tonelaje2024 } from '../data/metas-eye'
 import { TonelajeChart } from '../components/TonelajeChart'
 import { CumplimientoTable } from '../components/CumplimientoTable'
 import { MetasLineChart } from '../components/MetasLineChart'
+import { FuenteDatos } from '../components/FuenteDatos'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -45,10 +46,18 @@ export function Panorama() {
         </div>
       </div>
 
+      <FuenteDatos
+        fuente="Estudio Kyklos 2024 (encargado por ANIR-ReSimple)"
+        tipo="estimacion"
+        fecha="Abril 2025"
+        nota="Metodología: datos aduaneros, 21 entrevistas, encuesta a 42 gestores, fuentes públicas (RETC, SNIFA)"
+      />
+
       {/* Chart */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Material disponible vs. gestionado por subcategoría</h3>
         <TonelajeChart />
+        <FuenteDatos fuente="Estudio Kyklos 2024" tipo="estimacion" fecha="Abril 2025" />
       </div>
 
       {/* Tabla detalle */}
@@ -94,6 +103,7 @@ export function Panorama() {
           entre 45% (plástico) y 70% (papel y cartón) de valorización.
         </p>
         <MetasLineChart />
+        <FuenteDatos fuente="Decreto Supremo 12/2020, Tablas de metas" tipo="oficial" />
       </div>
 
       {/* Cumplimiento de metas */}
@@ -104,6 +114,12 @@ export function Panorama() {
           es la tensión central de la Ley REP. Estos tres escenarios lo hacen visible.
         </p>
         <CumplimientoTable />
+        <FuenteDatos
+          fuente="Estudio Kyklos 2024, Cuadro 14"
+          tipo="estimacion"
+          fecha="Abril 2025"
+          nota="Los escenarios son simulaciones basadas en datos estimados, no mediciones oficiales de la SMA"
+        />
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ import {
   datosGeneralesFiscalizacion as datos,
 } from '../data/fiscalizacion-rep'
 import { contarSigPorEstado } from '../data/sig-aprobados'
+import { FuenteDatos } from '../components/FuenteDatos'
 
 export function Fiscalizacion() {
   const sig = contarSigPorEstado()
@@ -44,6 +45,13 @@ export function Fiscalizacion() {
           <p className="text-xs text-stone-500">empresas sin SIG</p>
         </div>
       </div>
+
+      <FuenteDatos
+        fuente="SMA comunicado junio 2025 · Estudio Kyklos 2024 · Chile Neumáticos AG"
+        tipo="oficial"
+        fecha="Junio 2025"
+        nota="Sancionatorios: dato oficial SMA. Free-riders EyE: estimación Kyklos/SII. Free-riders NFU: dato Chile Neumáticos AG"
+      />
 
       {/* Procedimientos sancionatorios */}
       <div>

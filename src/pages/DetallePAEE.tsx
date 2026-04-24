@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import { productosPrioritarios } from '../data/productos-prioritarios'
 import { metasPAEE, datosClavesPAEE as d } from '../data/datos-paee'
+import { FuenteDatos } from '../components/FuenteDatos'
 
 const chartData = metasPAEE.map((m) => ({
   año: `Año ${m.año}`,
@@ -63,6 +64,12 @@ export function DetallePAEE() {
         </div>
       </div>
 
+      <FuenteDatos
+        fuente="MMA (Paz Maluenda) · País Circular"
+        tipo="oficial"
+        fecha="Junio 2025"
+      />
+
       {/* Categorías */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Categorías del decreto</h3>
@@ -114,9 +121,12 @@ export function DetallePAEE() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <p className="text-xs text-stone-600 mt-2">
-          AIT y paneles FV inician metas en año 3. Fuente: decreto P+AEE aprobado por Consejo de Ministros (jun 2025).
-        </p>
+        <FuenteDatos
+          fuente="Decreto P+AEE aprobado por Consejo de Ministros"
+          tipo="oficial"
+          fecha="Junio 2025"
+          nota="Metas confirmadas. Valores intermedios pendientes de verificación tras publicación en Diario Oficial"
+        />
       </div>
 
       {/* SIG en formación */}
@@ -159,6 +169,11 @@ export function DetallePAEE() {
             </div>
           ))}
         </div>
+        <FuenteDatos
+          fuente="País Circular · MMA · Contraloría General"
+          tipo="oficial"
+          fecha="20 abril 2026"
+        />
       </div>
     </div>
   )

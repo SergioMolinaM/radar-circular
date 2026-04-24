@@ -5,6 +5,7 @@ import {
 import { productosPrioritarios } from '../data/productos-prioritarios'
 import { metasNFU, gestoresNFU, datosClaveNFU } from '../data/datos-nfu'
 import { MetasTable } from '../components/MetasTable'
+import { FuenteDatos } from '../components/FuenteDatos'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -84,6 +85,13 @@ export function DetalleNFU() {
         </div>
       </div>
 
+      <FuenteDatos
+        fuente="Presentación CORFO MEP NFU · Chile Neumáticos AG · Valora Más"
+        tipo="declaracion-actor"
+        fecha="Noviembre 2025"
+        nota="Datos presentados en sesiones MEP CORFO. Stock de 20k ton reportado por Valora Más (no verificado por SMA)"
+      />
+
       {/* Alertas */}
       <div className="space-y-3">
         <div className="p-4 rounded-lg border border-amber-900/50 bg-amber-950/20">
@@ -152,6 +160,7 @@ export function DetalleNFU() {
             nota="Cat. A: vehículos livianos · Cat. B: mineros/industriales. Metas saltan de 50% a 80% en 2026."
           />
         </div>
+        <FuenteDatos fuente="Decreto Supremo 8/2019" tipo="oficial" />
       </div>
     </div>
   )

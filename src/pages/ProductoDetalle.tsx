@@ -1,6 +1,7 @@
 // src/pages/ProductoDetalle.tsx
 import { useParams, Navigate } from 'react-router-dom'
 import { ExternalLink } from 'lucide-react'
+import { FuenteDatos } from '../components/FuenteDatos'
 import { productosPrioritarios } from '../data/productos-prioritarios'
 
 const estadoLabel: Record<string, { text: string; className: string }> = {
@@ -11,7 +12,7 @@ const estadoLabel: Record<string, { text: string; className: string }> = {
 }
 
 // Contexto adicional por PP (datos oficiales que no justifican una página propia aún)
-const contextoAdicional: Record<string, { items: { titulo: string; texto: string }[]; enlaces?: { label: string; url: string }[] }> = {
+const contextoAdicional: Record<string, { items: { titulo: string; texto: string }[]; enlaces?: { label: string; url: string }[]; atribucion?: { fuente: string; tipo: 'oficial' | 'estimacion' | 'sectorial' | 'declaracion-actor'; fecha?: string } }> = {
   alu: {
     items: [
       {
@@ -35,6 +36,7 @@ const contextoAdicional: Record<string, { items: { titulo: string; texto: string
       { label: 'Expediente ALU en MMA', url: 'https://economiacircular.mma.gob.cl/aceites-y-lubricantes/' },
       { label: 'DS 47/2023 en BCN', url: 'https://www.bcn.cl/leychile/navegar?idNorma=1204037' },
     ],
+    atribucion: { fuente: 'ANIR/Kyklos Estudio Comparativo de Materiales 2024', tipo: 'estimacion', fecha: 'Diciembre 2025' },
   },
   bfu: {
     items: [
@@ -58,6 +60,7 @@ const contextoAdicional: Record<string, { items: { titulo: string; texto: string
     enlaces: [
       { label: 'Expediente BFU en MMA', url: 'https://economiacircular.mma.gob.cl/baterias/' },
     ],
+    atribucion: { fuente: 'ANIR/Kyklos Estudios 2023-2024', tipo: 'estimacion', fecha: 'Diciembre 2024-2025' },
   },
   textiles: {
     items: [
@@ -149,6 +152,9 @@ export function ProductoDetalle() {
               <p className="text-sm text-stone-400 leading-relaxed">{item.texto}</p>
             </div>
           ))}
+          {contexto.atribucion && (
+            <FuenteDatos fuente={contexto.atribucion.fuente} tipo={contexto.atribucion.tipo} fecha={contexto.atribucion.fecha} />
+          )}
         </div>
       )}
 
