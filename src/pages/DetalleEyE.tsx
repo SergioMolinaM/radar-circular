@@ -5,6 +5,7 @@ import { MetasTable } from '../components/MetasTable'
 import { CumplimientoTable } from '../components/CumplimientoTable'
 import { TonelajeChart } from '../components/TonelajeChart'
 import { MetasLineChart } from '../components/MetasLineChart'
+import { operacionEyENoDom, operacionEyEDom, datosOperativosGRANSIC } from '../data/operacion-eye'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -58,6 +59,67 @@ export function DetalleEyE() {
               </span>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Operación primer año */}
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Primer año de operación (2024)</h3>
+        <p className="text-xs text-stone-500 mb-4">Fuente: País Circular, diciembre 2024</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-5 rounded-xl border border-stone-800">
+            <p className="text-sm font-medium text-stone-300 mb-3">No domiciliarios</p>
+            <p className="text-xs text-stone-500 mb-2">{operacionEyENoDom.numSIG} SIG · ~{(operacionEyENoDom.totalToneladas / 1000).toFixed(0)}k ton declaradas</p>
+            <div className="space-y-1.5">
+              {operacionEyENoDom.distribucion.map((d) => (
+                <div key={d.sig} className="flex items-center justify-between text-sm">
+                  <span className="text-stone-400">{d.sig}</span>
+                  <span className="text-stone-300 font-medium">{d.porcentaje}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="p-5 rounded-xl border border-stone-800">
+            <p className="text-sm font-medium text-stone-300 mb-3">Domiciliarios</p>
+            <p className="text-xs text-stone-500 mb-2">{operacionEyEDom.numGRANSIC} GRANSIC · ~{(operacionEyEDom.totalToneladas / 1000).toFixed(0)}k ton declaradas</p>
+            <div className="space-y-1.5">
+              {operacionEyEDom.distribucion.map((d) => (
+                <div key={d.sig} className="flex items-center justify-between text-sm">
+                  <span className="text-stone-400">{d.sig}</span>
+                  <span className="text-stone-300 font-medium">{d.porcentaje}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Datos operativos GRANSIC */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="p-4 rounded-lg border border-stone-800">
+          <p className="text-sm font-medium text-stone-300 mb-2">ReSimple</p>
+          <div className="space-y-1 text-sm text-stone-400">
+            <p>{datosOperativosGRANSIC.resimple.conveniosMunicipales} convenios municipales</p>
+            <p>{datosOperativosGRANSIC.resimple.campanasInstaladas.toLocaleString('es-CL')} campanas instaladas</p>
+            <p>{datosOperativosGRANSIC.resimple.comunasRecoleccion} comunas con recolección</p>
+            <p>{(datosOperativosGRANSIC.resimple.viviendasCobertura / 1000000).toFixed(1)}M viviendas cobertura</p>
+          </div>
+        </div>
+        <div className="p-4 rounded-lg border border-stone-800">
+          <p className="text-sm font-medium text-stone-300 mb-2">ProREP</p>
+          <div className="space-y-1 text-sm text-stone-400">
+            <p>{datosOperativosGRANSIC.prorep.socios}+ socios</p>
+            <p>Modelo: {datosOperativosGRANSIC.prorep.modelo}</p>
+            <p>Exclusivo {datosOperativosGRANSIC.prorep.exclusivo}</p>
+          </div>
+        </div>
+        <div className="p-4 rounded-lg border border-stone-800">
+          <p className="text-sm font-medium text-stone-300 mb-2">GIRO</p>
+          <div className="space-y-1 text-sm text-stone-400">
+            <p>{(datosOperativosGRANSIC.giro.beneficiarios / 1000).toFixed(0)}k beneficiarios</p>
+            <p>{datosOperativosGRANSIC.giro.cobertura}</p>
+            <p className="text-amber-400">{datosOperativosGRANSIC.giro.licitacionesDesiertas} licitaciones desiertas</p>
+          </div>
         </div>
       </div>
 
