@@ -1,6 +1,7 @@
 // src/pages/Analisis.tsx
 import { trabasEyE, trabasNFU, marcaAnalitica } from '../data/analisis-rep'
 import { UltimaActualizacion } from '../components/UltimaActualizacion'
+import { FuenteDatos } from '../components/FuenteDatos'
 
 function TrabaCard({ traba }: { traba: (typeof trabasEyE)[0] }) {
   return (
@@ -78,6 +79,13 @@ export function Analisis() {
           {trabasNFU.map((t) => <TrabaCard key={t.id} traba={t} />)}
         </div>
       </div>
+
+      <FuenteDatos
+        fuente="Matriz Consolidada MEP EyE (26-09-25) · Informe MEP NFU V1 · Informe Figueroa PUC"
+        tipo="declaracion-actor"
+        fecha="Septiembre-noviembre 2025"
+        nota="Datos y propuestas presentados en sesiones MEP CORFO por 12 organizaciones del ecosistema REP"
+      />
     </div>
   )
 }

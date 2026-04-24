@@ -69,7 +69,7 @@ export function DetalleNFU() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="p-4 rounded-lg border border-stone-800">
             <p className="text-xs text-stone-500">Gestores RETC</p>
-            <p className="text-xl font-bold">{d.gestoresTotalRETc}</p>
+            <p className="text-xl font-bold">{d.gestoresTotalRETC}</p>
           </div>
           <div className="p-4 rounded-lg border border-stone-800">
             <p className="text-xs text-stone-500">CTIP 2025</p>
@@ -147,7 +147,7 @@ export function DetalleNFU() {
           </ResponsiveContainer>
         </div>
         <p className="text-xs text-stone-600 mt-2">
-          Total: {d.gestoresTotalRETc} gestores registrados en RETC 2025. "Otras regiones" agrupa 33 gestores en regiones con menor concentración.
+          Total: {d.gestoresTotalRETC} gestores registrados en RETC 2025. "Otras regiones" agrupa 33 gestores en regiones con menor concentración.
         </p>
       </div>
 

@@ -48,13 +48,13 @@ export const datosClavesPAEE = {
       nombre: 'Aparatos de Intercambio de Temperatura (AIT)',
       descripcion: 'Refrigeradores, aires acondicionados, bombas de calor',
       metaInicio: '6% año 3',
-      metaFinal: '30% año 9+',
+      metaFinal: '30% año 10',
     },
     {
       nombre: 'Paneles Fotovoltaicos',
       descripcion: 'Paneles solares en desuso. Incorporados durante tramitación del decreto.',
       metaInicio: '6% año 3',
-      metaFinal: '30% año 9+',
+      metaFinal: '30% año 10',
     },
   ],
   sigEnFormacion: [

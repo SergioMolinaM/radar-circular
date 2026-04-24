@@ -37,7 +37,7 @@ export const gestoresNFU: GestorNFURegion[] = [
 ]
 
 export const datosClaveNFU = {
-  gestoresTotalRETc: 105,
+  gestoresTotalRETC: 105,
   ctipInput2023: 88570,
   ctipInput2025: 94360,
   recauchajeTonAnual: 6333,

@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { hitosFuturos, certezaConfig } from '../data/hoja-ruta'
 import { productosPrioritarios } from '../data/productos-prioritarios'
+import { FuenteDatos } from '../components/FuenteDatos'
+import { UltimaActualizacion } from '../components/UltimaActualizacion'
 
 type FiltroPP = 'todos' | string
 
@@ -22,6 +24,7 @@ export function HojaDeRuta() {
         <p className="text-xs text-stone-500">
           Fuentes: DS 12/2020, DS 8/2019, DS 47/2023, Decreto P+AEE, comunicados MMA y SMA.
         </p>
+        <UltimaActualizacion fecha="24 de abril de 2026" />
       </div>
 
       {/* Disclaimer */}
@@ -97,6 +100,13 @@ export function HojaDeRuta() {
           )
         })}
       </div>
+
+      <FuenteDatos
+        fuente="DS 12/2020 · DS 8/2019 · DS 47/2023 · Decreto P+AEE · Comunicados MMA y SMA"
+        tipo="oficial"
+        fecha="Abril 2026"
+        nota="Eventos 'determinado' fijados por decreto. Eventos 'estimado' sujetos a actos administrativos pendientes."
+      />
     </div>
   )
 }

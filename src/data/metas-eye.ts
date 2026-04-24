@@ -1,4 +1,7 @@
 // src/data/metas-eye.ts
+// Fuentes:
+// - Metas: Decreto Supremo 12/2020 (MMA), Tablas de metas de recolección y valorización
+// - Tonelaje 2024: Estudio Kyklos 2024 "Estadísticas del Reciclaje" (encargado por ANIR-ReSimple)
 
 export interface MetaAnual {
   año: number

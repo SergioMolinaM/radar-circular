@@ -1,4 +1,6 @@
 // src/data/productos-prioritarios.ts
+// Fuentes: DS 12/2020 (EyE), DS 8/2019 (NFU), DS 47/2023 (ALU),
+// Decreto P+AEE (Contraloría abr 2026), MMA economiacircular.mma.gob.cl
 
 export type EstadoDecreto =
   | 'vigente'
