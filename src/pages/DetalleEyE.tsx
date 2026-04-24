@@ -7,6 +7,7 @@ import { TonelajeChart } from '../components/TonelajeChart'
 import { MetasLineChart } from '../components/MetasLineChart'
 import { operacionEyENoDom, operacionEyEDom, datosOperativosGRANSIC } from '../data/operacion-eye'
 import { FuenteDatos } from '../components/FuenteDatos'
+import { UltimaActualizacion } from '../components/UltimaActualizacion'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -46,6 +47,7 @@ export function DetalleEyE() {
         </div>
         <p className="text-stone-400 mb-2">{pp.descripcion}</p>
         <p className="text-sm text-stone-500">{pp.decreto} · Vigencia: {pp.fechaVigencia}</p>
+        <UltimaActualizacion fecha="24 de abril de 2026" />
       </div>
 
       {/* SIG */}

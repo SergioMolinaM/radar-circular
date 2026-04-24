@@ -1,5 +1,6 @@
 // src/pages/Analisis.tsx
 import { trabasEyE, trabasNFU, marcaAnalitica } from '../data/analisis-rep'
+import { UltimaActualizacion } from '../components/UltimaActualizacion'
 
 function TrabaCard({ traba }: { traba: (typeof trabasEyE)[0] }) {
   return (
@@ -45,6 +46,7 @@ export function Analisis() {
           Fuentes: Matriz Consolidada MEP EyE · Informe MEP NFU V1 · Aportes ProREP, GIRO,
           ReSimple, ANIR, SOFOFA, MMA · Informe Figueroa PUC
         </p>
+        <UltimaActualizacion fecha="24 de abril de 2026" />
       </div>
 
       {/* Tesis central */}

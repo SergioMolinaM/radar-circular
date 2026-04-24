@@ -4,6 +4,7 @@ import { TonelajeChart } from '../components/TonelajeChart'
 import { CumplimientoTable } from '../components/CumplimientoTable'
 import { MetasLineChart } from '../components/MetasLineChart'
 import { FuenteDatos } from '../components/FuenteDatos'
+import { UltimaActualizacion } from '../components/UltimaActualizacion'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -24,6 +25,7 @@ export function Panorama() {
         <p className="text-xs text-stone-500">
           MDP: Material Disponible País · MGP: Material Gestionado País · SIG: Sistema de Gestión
         </p>
+        <UltimaActualizacion fecha="24 de abril de 2026" />
       </div>
 
       {/* KPIs */}

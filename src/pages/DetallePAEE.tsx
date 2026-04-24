@@ -5,6 +5,7 @@ import {
 import { productosPrioritarios } from '../data/productos-prioritarios'
 import { metasPAEE, datosClavesPAEE as d } from '../data/datos-paee'
 import { FuenteDatos } from '../components/FuenteDatos'
+import { UltimaActualizacion } from '../components/UltimaActualizacion'
 
 const chartData = metasPAEE.map((m) => ({
   año: `Año ${m.año}`,
@@ -28,6 +29,7 @@ export function DetallePAEE() {
           </span>
         </div>
         <p className="text-stone-400 mb-2">{pp.descripcion}</p>
+        <UltimaActualizacion fecha="24 de abril de 2026" />
       </div>
 
       {/* Alerta principal */}

@@ -7,6 +7,7 @@ import {
 } from '../data/fiscalizacion-rep'
 import { contarSigPorEstado } from '../data/sig-aprobados'
 import { FuenteDatos } from '../components/FuenteDatos'
+import { UltimaActualizacion } from '../components/UltimaActualizacion'
 
 export function Fiscalizacion() {
   const sig = contarSigPorEstado()
@@ -22,6 +23,7 @@ export function Fiscalizacion() {
         <p className="text-xs text-stone-500">
           Fuentes: SNIFA (snifa.sma.gob.cl) · Comunicados SMA · Estudio Kyklos 2024 · MEP NFU
         </p>
+        <UltimaActualizacion fecha="24 de abril de 2026" />
       </div>
 
       {/* KPIs */}
