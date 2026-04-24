@@ -65,7 +65,7 @@ export const productosPrioritarios: ProductoPrioritario[] = [
     estadoDecreto: 'vigente',
     fechaVigencia: 'Enero 2027',
     descripcion:
-      'Aceites lubricantes y grasas. Decreto vigente con obligaciones que entran en vigor en 2027.',
+      'Aceites lubricantes y grasas. DS 47/2023 publicado en noviembre de 2024. Obligaciones entran en vigor en enero de 2027. Sistemas de Gestión en proceso de formación.',
     sistemasGestion: [],
     color: '#6C5B3E',
   },
@@ -92,7 +92,7 @@ export const productosPrioritarios: ProductoPrioritario[] = [
     estadoDecreto: 'consulta-publica',
     fechaVigencia: null,
     descripcion:
-      'Consulta pública cerrada en abril de 2026. Decreto en elaboración.',
+      'Baterías de más de 5 kg (las menores están en el decreto P+AEE). Consulta pública cerrada en abril de 2026. Decreto en elaboración.',
     sistemasGestion: [],
     color: '#E17055',
   },
@@ -104,7 +104,7 @@ export const productosPrioritarios: ProductoPrioritario[] = [
     estadoDecreto: 'en-tramitacion',
     fechaVigencia: null,
     descripcion:
-      'Expediente iniciado en julio de 2025. Producto prioritario más reciente incorporado por el MMA.',
+      'Chile genera más de 572 mil toneladas de residuos textiles al año (7% de los residuos sólidos urbanos). Convocatoria de antecedentes abierta hasta el 18 de mayo de 2026 (reptextiles@mma.gob.cl). Consultoría BID en curso.',
     sistemasGestion: [],
     color: '#A29BFE',
   },
