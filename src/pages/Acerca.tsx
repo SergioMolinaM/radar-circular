@@ -77,12 +77,12 @@ const estudios = [
   },
   {
     nombre: 'Propuesta MEP REP EyE',
-    autor: 'Mesa de Economía Popular CORFO (2025)',
+    autor: 'Mesa Ejecutiva para la Productividad CORFO (2025)',
     descripcion: '12 organizaciones, 16 sesiones, 27 participantes. Diagnóstico de trabas y propuestas para la implementación de la Ley REP en envases y embalajes.',
   },
   {
     nombre: 'Informe MEP NFU',
-    autor: 'Mesa de Economía Popular CORFO (2025)',
+    autor: 'Mesa Ejecutiva para la Productividad CORFO (2025)',
     descripcion: '7 sesiones, 32 participantes. Diagnóstico de trabas y propuestas para neumáticos fuera de uso.',
   },
 ]

@@ -40,7 +40,7 @@ export function Analisis() {
       <div>
         <h2 className="text-2xl font-bold mb-2">Análisis: trabas y propuestas</h2>
         <p className="text-stone-400 mb-1">
-          Diagnóstico de las Mesas de Economía Popular (MEP) convocadas por CORFO (2025),
+          Diagnóstico de las Mesas Ejecutivas para la Productividad (MEP) convocadas por CORFO (2025),
           con aportes de 12 organizaciones del ecosistema REP.
         </p>
         <p className="text-xs text-stone-500">
