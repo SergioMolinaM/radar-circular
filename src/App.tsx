@@ -13,6 +13,7 @@ import { Analisis } from './pages/Analisis'
 import { Glosario } from './pages/Glosario'
 import { LeyRep } from './pages/LeyRep'
 import { HojaDeRuta } from './pages/HojaDeRuta'
+import { SistemasGestion } from './pages/SistemasGestion'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="panorama" element={<Panorama />} />
           <Route path="fiscalizacion" element={<Fiscalizacion />} />
+          <Route path="sistemas-gestion" element={<SistemasGestion />} />
           <Route path="analisis" element={<Analisis />} />
           <Route path="glosario" element={<Glosario />} />
           <Route path="hoja-de-ruta" element={<HojaDeRuta />} />

@@ -4,7 +4,7 @@ import { ProductoCard } from '../components/ProductoCard'
 
 const cifrasEcosistema = [
   { label: 'Productos prioritarios', valor: '6', detalle: '3 con metas vigentes' },
-  { label: 'Sistemas de Gestión', valor: '8+', detalle: '6 operativos · 2 en formación' },
+  { label: 'Sistemas de Gestión', valor: '35', detalle: '12 EyE · 23 NFU (RETC oct 2025)' },
   { label: 'Empresas reguladas', valor: '~40.000', detalle: 'EyE ~17k · P+AEE ~20,5k · NFU ~475' },
   { label: 'Fondo para el Reciclaje', valor: '$2.700M', detalle: '140 proyectos · 12 convocatorias desde 2018' },
 ]
