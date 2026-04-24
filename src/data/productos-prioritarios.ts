@@ -77,7 +77,7 @@ export const productosPrioritarios: ProductoPrioritario[] = [
     estadoDecreto: 'pre-publicacion',
     fechaVigencia: null,
     descripcion:
-      'Decreto en etapa final, pendiente de publicación en Diario Oficial. Dos SIG colectivos en formación: Wee Chile y TRAEE. Principal valorizador: Midas Chile.',
+      'Contraloría tomó razón el 20 de abril de 2026. Pendiente publicación en Diario Oficial. Incluye pilas (<5kg), aparatos eléctricos y electrónicos, y paneles fotovoltaicos. ~20.500 empresas reguladas. Tasa actual de reciclaje: 4,1%.',
     sistemasGestion: [
       { nombre: 'Wee Chile', tipo: 'colectivo', estado: 'en-formacion' },
       { nombre: 'TRAEE', tipo: 'colectivo', estado: 'en-formacion' },

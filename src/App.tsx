@@ -8,6 +8,7 @@ import { DetalleEyE } from './pages/DetalleEyE'
 import { DetalleNFU } from './pages/DetalleNFU'
 import { Acerca } from './pages/Acerca'
 import { Fiscalizacion } from './pages/Fiscalizacion'
+import { DetallePAEE } from './pages/DetallePAEE'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="fiscalizacion" element={<Fiscalizacion />} />
           <Route path="producto/eye" element={<DetalleEyE />} />
           <Route path="producto/nfu" element={<DetalleNFU />} />
+          <Route path="producto/paee" element={<DetallePAEE />} />
           <Route path="producto/:id" element={<ProductoDetalle />} />
           <Route path="acerca" element={<Acerca />} />
         </Route>
