@@ -1,15 +1,20 @@
 // src/components/Sidebar.tsx
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Home, BarChart3, Info, Menu, X, Shield, FileText, BookOpen } from 'lucide-react'
+import { Home, BarChart3, Info, Menu, X, Shield, FileText, BookOpen, CalendarClock, Scale } from 'lucide-react'
 import { productosPrioritarios } from '../data/productos-prioritarios'
 
-const navItems = [
-  { to: '/', label: 'Inicio', icon: Home },
+const datosItems = [
   { to: '/panorama', label: 'Panorama REP', icon: BarChart3 },
   { to: '/fiscalizacion', label: 'Fiscalización', icon: Shield },
   { to: '/analisis', label: 'Análisis', icon: FileText },
+  { to: '/hoja-de-ruta', label: 'Hoja de ruta', icon: CalendarClock },
+]
+
+const referenciaItems = [
+  { to: '/ley-rep', label: 'La Ley REP', icon: Scale },
   { to: '/glosario', label: 'Glosario', icon: BookOpen },
+  { to: '/acerca', label: 'Acerca de', icon: Info },
 ]
 
 export function Sidebar() {
@@ -39,21 +44,28 @@ export function Sidebar() {
         </button>
       </div>
 
+      {/* Home */}
       <nav className="flex flex-col gap-1">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={linkClass}
-            end={item.to === '/'}
-            onClick={handleNav}
-          >
+        <NavLink to="/" className={linkClass} end onClick={handleNav}>
+          <Home size={18} />
+          Inicio
+        </NavLink>
+      </nav>
+
+      {/* Datos */}
+      <div className="flex flex-col gap-1">
+        <span className="px-4 text-xs font-medium text-stone-500 uppercase tracking-wider mb-1">
+          Datos
+        </span>
+        {datosItems.map((item) => (
+          <NavLink key={item.to} to={item.to} className={linkClass} onClick={handleNav}>
             <item.icon size={18} />
             {item.label}
           </NavLink>
         ))}
-      </nav>
+      </div>
 
+      {/* Productos Prioritarios */}
       <div className="flex flex-col gap-1">
         <span className="px-4 text-xs font-medium text-stone-500 uppercase tracking-wider mb-1">
           Productos Prioritarios
@@ -74,11 +86,20 @@ export function Sidebar() {
         ))}
       </div>
 
+      {/* Referencia */}
+      <div className="flex flex-col gap-1">
+        <span className="px-4 text-xs font-medium text-stone-500 uppercase tracking-wider mb-1">
+          Referencia
+        </span>
+        {referenciaItems.map((item) => (
+          <NavLink key={item.to} to={item.to} className={linkClass} onClick={handleNav}>
+            <item.icon size={18} />
+            {item.label}
+          </NavLink>
+        ))}
+      </div>
+
       <div className="mt-auto">
-        <NavLink to="/acerca" className={linkClass} onClick={handleNav}>
-          <Info size={18} />
-          Acerca de
-        </NavLink>
         <p className="px-4 mt-3 text-xs text-stone-600">
           Tercera Letra · 2026
         </p>

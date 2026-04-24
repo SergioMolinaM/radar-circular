@@ -35,6 +35,29 @@ export function Home() {
         ))}
       </div>
 
+      {/* Qué es Radar Circular */}
+      <div className="mt-10 p-6 rounded-xl border border-stone-800 bg-stone-900/30 space-y-4">
+        <h3 className="text-lg font-semibold">¿Qué es Radar Circular?</h3>
+        <p className="text-sm text-stone-400 leading-relaxed">
+          La información pública sobre la Ley REP en Chile está dispersa en múltiples
+          plataformas estatales: RETC (MMA), SNIFA (SMA), SISREP (SMA), SINADER, Ventanilla
+          Única, Fondo para el Reciclaje y el portal de Economía Circular del MMA. Los estudios
+          sectoriales (Kyklos, ANIR) se publican como documentos extensos de difícil acceso.
+        </p>
+        <p className="text-sm text-stone-400 leading-relaxed">
+          Radar Circular reúne, visualiza y contextualiza estos datos en un solo lugar. No
+          reemplaza las fuentes oficiales — las complementa con análisis, trazabilidad de fuentes
+          y una capa analítica basada en las Mesas de Economía Popular convocadas por CORFO
+          y en estudios académicos como el del Instituto de Economía de la PUC.
+        </p>
+        <p className="text-sm text-stone-400 leading-relaxed">
+          Está diseñado para regulados que necesitan entender sus obligaciones, consultores
+          que asesoran a empresas, periodistas que cubren medio ambiente, académicos que
+          investigan la implementación REP, y ciudadanía informada que quiere saber qué pasa
+          con los residuos que genera.
+        </p>
+      </div>
+
       <div className="mt-10 p-5 rounded-xl border border-stone-800 text-sm text-stone-400 space-y-2">
         <p className="font-medium text-stone-300">Fuentes de datos</p>
         <p>
