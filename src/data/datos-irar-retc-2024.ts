@@ -4,8 +4,8 @@
  * Fecha extracción: diciembre 2025 (dataset 2024)
  * Licencia: Creative Commons Attribution
  *
- * EyE: Instalaciones que reciben envases y embalajes (LER 15 01)
- * NFU: Instalaciones que reciben neumáticos fuera de uso (LER 16 01 03 / caucho)
+ * EyE: 102 instalaciones que reciben envases y embalajes (LER 15 01)
+ * NFU: 28 instalaciones que reciben neumáticos fuera de uso (LER 16 01 03 / caucho)
  *
  * NOTA: Estos son puntos de INFRAESTRUCTURA DE VALORIZACIÓN (dónde se reciben y procesan residuos),
  * NO cobertura de recolección domiciliaria (eso es ReSimple).
@@ -134,6 +134,14 @@ export const instalacionesEyE: InstalacionIRAR[] = [
   { nombre: 'Norte Verde Quilicura', razonSocial: 'RECUPERADORA NORTE VERDE SPA', comuna: 'Quilicura', region: 'Metropolitana', lat: -33.3733, lon: -70.7206, toneladasAnuales2024: 9.6 },
   { nombre: 'Verun La Pintana', razonSocial: 'SOC COM VERUN LTDA', comuna: 'La Pintana', region: 'Metropolitana', lat: -33.5884, lon: -70.6632, toneladasAnuales2024: 1.9 },
   { nombre: 'Recycla Pudahuel', razonSocial: 'RECYCLA CHILE SA', comuna: 'Pudahuel', region: 'Metropolitana', lat: -33.3815, lon: -70.7754, toneladasAnuales2024: 1.6 },
+  // --- 7 instalaciones declaradas RM en RETC pero algunas ubicadas fuera de RM según coordenadas ---
+  { nombre: 'Virutex Ilko San Carlos', razonSocial: 'VIRUTEX ILKO SPA', comuna: 'San Carlos', region: 'Metropolitana', lat: -36.4459, lon: -71.9735, toneladasAnuales2024: 80.1 }, // ⚠️ Coordenadas en Ñuble
+  { nombre: 'Eco-PuertoMontt', razonSocial: 'ECO LOGICA SA', comuna: 'Puerto Montt', region: 'Metropolitana', lat: -41.4401, lon: -73.0059, toneladasAnuales2024: 37.1 }, // ⚠️ Coordenadas en Los Lagos
+  { nombre: 'Ambipar Los Ángeles', razonSocial: 'AMBIPAR ENVIRONMENT CHILE LIMITADA', comuna: 'Los Ángeles', region: 'Metropolitana', lat: -37.4590, lon: -72.3730, toneladasAnuales2024: 17.1 }, // ⚠️ Coordenadas en Biobío
+  { nombre: 'GAIA WM Talca', razonSocial: 'GESTION AMBIENTAL INTEGRADA SPA', comuna: 'Talca', region: 'Metropolitana', lat: -35.4530, lon: -71.5934, toneladasAnuales2024: 14.3 }, // ⚠️ Coordenadas en Maule
+  { nombre: 'Labdur Bodegas', razonSocial: 'GESTION AMBIENTAL INTEGRADA SPA', comuna: 'Pudahuel', region: 'Metropolitana', lat: -35.4530, lon: -71.5934, toneladasAnuales2024: 12.8 }, // ⚠️ Dice Pudahuel pero coordenadas en Maule (misma ubicación GAIA WM Talca)
+  { nombre: 'Excedentes La Cisterna', razonSocial: 'SOC COMERCIALIZADORA DE EXCEDENTES INDUSTRIALES SPA', comuna: 'La Cisterna', region: 'Metropolitana', lat: -33.5361, lon: -70.6529, toneladasAnuales2024: 9.4 },
+  { nombre: 'ET Cerro Los Cóndores', razonSocial: 'GESTION ECOLOGICA DE RESIDUOS SA', comuna: 'Quilicura', region: 'Metropolitana', lat: -33.3400, lon: -70.7199, toneladasAnuales2024: 1.8 },
 ];
 
 // --- 28 instalaciones que reciben Neumáticos Fuera de Uso ---
@@ -185,8 +193,11 @@ export const instalacionesNFU: InstalacionIRAR[] = [
  * - Top NFU por tonelaje: Ecológica Lampa (2.8k), Enfaena La Pintana (1.3k), Michelin La Negra (1.1k)
  *
  * ADVERTENCIA sobre región en datos RETC:
- * Algunas instalaciones tienen región "Metropolitana de Santiago" pero coordenadas en otras regiones
- * (ej: ACCA en Puerto Montt, Michelin MSMR en Antofagasta). Esto es un error de registro en RETC.
- * Las coordenadas lat/lon son correctas; la región declarada no siempre lo es.
- * Para el mapa, usar coordenadas, no el campo región.
+ * 5 instalaciones tienen región "Metropolitana de Santiago" pero coordenadas fuera de RM:
+ *   - Virutex Ilko: declarada RM, coordenadas en San Carlos (Ñuble)
+ *   - Eco-PuertoMontt: declarada RM, coordenadas en Puerto Montt (Los Lagos)
+ *   - Ambipar Los Ángeles: declarada RM, coordenadas en Los Ángeles (Biobío)
+ *   - GAIA WM Talca: declarada RM, coordenadas en Talca (Maule)
+ *   - Labdur Bodegas: declarada Pudahuel, mismas coordenadas que GAIA WM Talca (Maule)
+ * Para el mapa, usar coordenadas lat/lon, NO el campo región.
  */
