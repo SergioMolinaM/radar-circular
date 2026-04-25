@@ -47,7 +47,7 @@ export function DetalleEyE() {
         </div>
         <p className="text-stone-400 mb-2">{pp.descripcion}</p>
         <p className="text-sm text-stone-500">{pp.decreto} · Vigencia: {pp.fechaVigencia}</p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* SIG */}
@@ -68,6 +68,9 @@ export function DetalleEyE() {
       {/* Operación primer año */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Primer año de operación (2024)</h3>
+        <p className="text-xs text-amber-400 mb-4">
+          ⚠ Datos de diciembre 2024 (País Circular). La operación ha avanzado desde entonces.
+        </p>
         <p className="text-xs text-stone-500 mb-4">Fuente: País Circular, diciembre 2024</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-5 rounded-xl border border-stone-800">

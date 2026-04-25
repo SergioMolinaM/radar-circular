@@ -29,7 +29,7 @@ export function DetallePAEE() {
           </span>
         </div>
         <p className="text-stone-400 mb-2">{pp.descripcion}</p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* Alerta principal */}

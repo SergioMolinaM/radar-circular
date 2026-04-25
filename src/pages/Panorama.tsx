@@ -25,7 +25,7 @@ export function Panorama() {
         <p className="text-xs text-stone-500">
           MDP: Material Disponible País · MGP: Material Gestionado País · SIG: Sistema de Gestión
         </p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* KPIs */}

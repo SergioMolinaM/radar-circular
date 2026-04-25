@@ -30,7 +30,7 @@ export function SistemasGestion() {
         <p className="text-stone-400 mb-1">
           Listado oficial de todos los SIG autorizados por el MMA para operar bajo la Ley REP.
         </p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* KPIs */}
@@ -58,6 +58,13 @@ export function SistemasGestion() {
         fecha="21 de octubre 2025"
         nota="Dato oficial del Ministerio del Medio Ambiente publicado en datosretc.mma.gob.cl"
       />
+
+      <div className="p-3 rounded-lg border border-amber-900/30 bg-amber-950/10">
+        <p className="text-xs text-amber-400">
+          ⚠ Datos de octubre 2025. Pueden existir SIG aprobados después de esa fecha que no aparecen en este listado.
+          Verificar en <a href="https://datosretc.mma.gob.cl/dataset/sistemas-de-gestion-aprobados" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-300">RETC Open Data</a>.
+        </p>
+      </div>
 
       {/* Filtros */}
       <div className="flex flex-wrap gap-4">

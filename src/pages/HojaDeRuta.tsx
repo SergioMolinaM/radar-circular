@@ -24,7 +24,7 @@ export function HojaDeRuta() {
         <p className="text-xs text-stone-500">
           Fuentes: DS 12/2020, DS 8/2019, DS 47/2023, Decreto P+AEE, comunicados MMA y SMA.
         </p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* Disclaimer */}

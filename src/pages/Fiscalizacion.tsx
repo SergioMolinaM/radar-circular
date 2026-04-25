@@ -23,7 +23,7 @@ export function Fiscalizacion() {
         <p className="text-xs text-stone-500">
           Fuentes: SNIFA (snifa.sma.gob.cl) · Comunicados SMA · Estudio Kyklos 2024 · MEP NFU
         </p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* KPIs */}

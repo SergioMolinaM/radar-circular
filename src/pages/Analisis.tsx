@@ -47,7 +47,7 @@ export function Analisis() {
           Fuentes: Matriz Consolidada MEP EyE · Informe MEP NFU V1 · Aportes ProREP, GIRO,
           ReSimple, ANIR, SOFOFA, MMA · Informe Figueroa PUC
         </p>
-        <UltimaActualizacion fecha="24 de abril de 2026" />
+        <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* Tesis central */}
