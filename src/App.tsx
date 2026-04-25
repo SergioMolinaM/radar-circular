@@ -1,5 +1,6 @@
 // src/App.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ScrollToTop } from './components/ScrollToTop'
 import { Layout } from './components/Layout'
 import { Home } from './pages/Home'
 import { Panorama } from './pages/Panorama'
@@ -18,6 +19,7 @@ import { SistemasGestion } from './pages/SistemasGestion'
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
