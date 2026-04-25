@@ -182,6 +182,21 @@ export function Home() {
         </Link>
       </div>
 
+      {/* Mapa */}
+      <Link
+        to="/mapa"
+        className="block p-5 rounded-xl transition-all hover:translate-y-[-2px]"
+        style={{ backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)' }}
+      >
+        <div className="flex items-center gap-2 mb-1">
+          <span style={{ color: 'var(--accent)' }}>&#9673;</span>
+          <p className="font-semibold" style={{ color: 'var(--text-primary)', fontFamily: "'DM Serif Display', serif" }}>Mapa territorial</p>
+        </div>
+        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+          Gestores, cobertura GRANSIC y convenios municipales por región.
+        </p>
+      </Link>
+
       {/* Fuentes */}
       <div className="text-xs space-y-1 pt-2" style={{ color: 'var(--text-muted)' }}>
         <p className="font-medium" style={{ color: 'var(--text-secondary)' }}>Fuentes de datos</p>

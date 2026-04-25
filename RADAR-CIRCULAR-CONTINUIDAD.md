@@ -1,5 +1,5 @@
 # RADAR CIRCULAR — DOCUMENTO DE CONTINUIDAD
-## Actualizado: 25 de abril de 2026 — Post Fase 13 (Luz, respiración y correcciones UX)
+## Actualizado: 25 de abril de 2026 — Post Fase 14 (Mapa Territorial)
 
 ---
 
@@ -28,7 +28,15 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 - Favicon SVG radar verde
 - OG tags y meta description actualizados
 
-### Pantallas construidas (Fases 0–13)
+### Fase 14 — Mapa Territorial
+
+- Mapa Leaflet con GeoJSON de 16 regiones de Chile (caracena/chile-geojson)
+- 3 capas: gestores NFU (105 total), comunas GRANSIC (estimación INE), convenios ReSimple (39)
+- Panel lateral con hover por región, KPIs y leyenda
+- Tile layer CARTO dark, coherente con paleta editorial
+- Card de acceso en Home
+
+### Pantallas construidas (Fases 0–14)
 
 | Ruta | Pantalla | Contenido |
 |---|---|---|
@@ -41,6 +49,7 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 | `/producto/bfu` | Detalle BFU | Cifras 74,5%/52% + decreto + alcance + relación P+AEE |
 | `/producto/textiles` | Detalle Textiles | 572k ton + normativo + internacional + APL |
 | `/fiscalizacion` | Fiscalización | KPIs + 2 sancionatorios + alertas + free-riders + SISREP + callout |
+| `/mapa` | Mapa territorial | Leaflet choropleth — gestores NFU, comunas GRANSIC, convenios ReSimple por región |
 | `/hoja-de-ruta` | Lo que viene | 19 hitos 2026-2035+ con filtro PP + 3 niveles certeza + callout |
 | `/ley-rep` | La Ley REP | Marco legal + ciclo + actores + cronología corregida + enlaces |
 | `/sistemas-gestion` | Sistemas de Gestión | 35 SIG RETC con filtros + alerta antigüedad nov 2025 |
@@ -72,10 +81,10 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 - Mapa territorial por región
 - SEO: meta tags por ruta
 
-### Pendientes diseño (Fase 14-15)
-- Mapa territorial con Leaflet (gestores NFU por región, cobertura GRANSIC, convenios ReSimple)
+### Pendientes diseño (Fase 15+)
 - Página Análisis recreada con rediseño de escenarios de cumplimiento
 - og-image.png real (capturar desde og-image.html)
+- Mapa: agregar capa de gestores EyE cuando RETC publique datos actualizados
 
 ### Para próxima sesión
 Decir: "Continúo sesión Radar Circular" + indicar qué se quiere hacer.
