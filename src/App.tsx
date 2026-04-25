@@ -15,6 +15,7 @@ import { Glosario } from './pages/Glosario'
 import { LeyRep } from './pages/LeyRep'
 import { HojaDeRuta } from './pages/HojaDeRuta'
 import { SistemasGestion } from './pages/SistemasGestion'
+import { MapaTerritorial } from './pages/MapaTerritorial'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="panorama" element={<Panorama />} />
+          <Route path="mapa" element={<MapaTerritorial />} />
           <Route path="fiscalizacion" element={<Fiscalizacion />} />
           <Route path="sistemas-gestion" element={<SistemasGestion />} />
           {/* <Route path="analisis" element={<Analisis />} /> Archivado — pendiente rediseño Fase 15 */}

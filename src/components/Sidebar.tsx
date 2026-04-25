@@ -1,12 +1,13 @@
 // src/components/Sidebar.tsx
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Home, BarChart3, Info, Menu, X, Shield, BookOpen, CalendarClock, Scale, Building2 } from 'lucide-react'
+import { Home, BarChart3, Info, Menu, X, Shield, BookOpen, CalendarClock, Scale, Building2, Map } from 'lucide-react'
 import { productosPrioritarios } from '../data/productos-prioritarios'
 import { RadarLogo } from './RadarLogo'
 
 const datosItems = [
   { to: '/panorama', label: 'Situación actual', icon: BarChart3 },
+  { to: '/mapa', label: 'Mapa territorial', icon: Map },
   { to: '/fiscalizacion', label: 'Fiscalización', icon: Shield },
   { to: '/sistemas-gestion', label: 'Sistemas de Gestión', icon: Building2 },
   { to: '/hoja-de-ruta', label: 'Lo que viene', icon: CalendarClock },
