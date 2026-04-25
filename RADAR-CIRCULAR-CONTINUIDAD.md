@@ -1,5 +1,5 @@
 # RADAR CIRCULAR — DOCUMENTO DE CONTINUIDAD
-## Actualizado: 25 de abril de 2026 — Post Fase 12 (Auditoría + Correcciones)
+## Actualizado: 25 de abril de 2026 — Post Fase 13 (Luz, respiración y correcciones UX)
 
 ---
 
@@ -17,31 +17,42 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 - 6 riesgos de antigüedad mitigados con alertas visibles
 - Documento completo: AUDITORIA-RADAR-CIRCULAR.md
 
-### Pantallas construidas (Fases 0–12)
+### Fase 13 — Cambios UX/diseño
+
+- Paleta actualizada: superficies más luminosas (--bg-surface, --bg-elevated más claros), textos secundarios más legibles
+- Componente Callout (3 variantes: explainer/info/warning) — callouts claros en 5 páginas de detalle
+- ScrollToTop: scroll al inicio al cambiar de página
+- Footer: copyright Tercera Letra con "T" verde en todas las páginas
+- Migración completa stone-* → CSS variables en todas las páginas
+- Sidebar: "Análisis" removida del menú, "Panorama REP" → "Situación actual", "Hoja de ruta" → "Lo que viene", "Acerca de" → "Acerca de Radar Circular"
+- Favicon SVG radar verde
+- OG tags y meta description actualizados
+
+### Pantallas construidas (Fases 0–13)
 
 | Ruta | Pantalla | Contenido |
 |---|---|---|
 | `/` | Home | KPIs ecosistema + cards 6 PP + bloque narrativo + fuentes |
-| `/panorama` | Panorama REP | Chart barras MDP/MGP + tabla Kyklos + trayectoria metas + 3 escenarios |
-| `/producto/eye` | Detalle EyE | SIG + operación GRANSIC + KPIs Kyklos + metas dom/no dom (% POM) + cumplimiento |
-| `/producto/nfu` | Detalle NFU | SIG + KPIs + alertas (recauchaje, DS8) + chart gestores + metas |
-| `/producto/paee` | Detalle P+AEE | Metas 3 categorías + timeline post cambio gobierno + KPIs + SIG en formación |
+| `/panorama` | Situación actual | Chart barras MDP/MGP + tabla Kyklos + trayectoria metas + 3 escenarios + callout |
+| `/producto/eye` | Detalle EyE | SIG + operación GRANSIC + KPIs Kyklos + metas + callouts explicativos |
+| `/producto/nfu` | Detalle NFU | SIG + KPIs + alertas + chart gestores + metas + callout |
+| `/producto/paee` | Detalle P+AEE | Metas 3 categorías + timeline + KPIs + SIG + callout |
 | `/producto/alu` | Detalle ALU | Cifras 47,6% + decreto DS47 + antecedentes + próximos pasos |
 | `/producto/bfu` | Detalle BFU | Cifras 74,5%/52% + decreto + alcance + relación P+AEE |
 | `/producto/textiles` | Detalle Textiles | 572k ton + normativo + internacional + APL |
-| `/fiscalizacion` | Fiscalización | KPIs + 2 sancionatorios + alerta cobertura temporal + free-riders + SISREP |
-| `/analisis` | Análisis | Tesis Figueroa + 6 trabas MEP (3 EyE + 3 NFU) + crítica MMA |
-| `/hoja-de-ruta` | Hoja de Ruta | 19 hitos 2026-2035+ con filtro PP + 3 niveles certeza |
+| `/fiscalizacion` | Fiscalización | KPIs + 2 sancionatorios + alertas + free-riders + SISREP + callout |
+| `/hoja-de-ruta` | Lo que viene | 19 hitos 2026-2035+ con filtro PP + 3 niveles certeza + callout |
 | `/ley-rep` | La Ley REP | Marco legal + ciclo + actores + cronología corregida + enlaces |
-| `/sistemas-gestion` | Sistemas de Gestión | 35 SIG RETC con filtros + alerta antigüedad oct 2025 |
-| `/glosario` | Glosario | 28 términos REP con definiciones (GRANSIC corregida, OEC actualizada) |
-| `/acerca` | Acerca de | 10 fuentes oficiales + 4 estudios referencia |
+| `/sistemas-gestion` | Sistemas de Gestión | 35 SIG RETC con filtros + alerta antigüedad nov 2025 |
+| `/glosario` | Glosario | 29 términos REP con definiciones |
+| `/acerca` | Acerca de Radar Circular | 10 fuentes + 4 estudios + párrafo Tercera Letra |
+| `/analisis` | (archivada) | Pendiente rediseño en Fase 15 |
 
 ### Contexto regulatorio post cambio de gobierno (marzo 2026)
 
 - DS12/2020 (EyE) y DS8/2019 (NFU): NO afectados, plenamente vigentes
 - P+AEE: Retirado de Contraloría en marzo, reingresado, toma de razón 23-abr-2026, pendiente DO
-- OEC: Jefatura sujeta a verificación
+- OEC: María José Ureta confirmada (RE N°684, feb 2026)
 - Textiles: Convocatoria antecedentes hasta 18-may-2026, verificar continuidad consultoría BID
 
 ---
@@ -49,10 +60,9 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 ## QUÉ SIGUE
 
 ### Pendientes de datos (requieren acceso a fuentes)
-- Descargar XLSX RETC SIG aprobados actualizado (>oct 2025)
+- Descargar XLSX RETC SIG aprobados actualizado (>nov 2025)
 - Verificar nuevos sancionatorios en SNIFA (>jun 2025)
 - Confirmar publicación P+AEE en DO cuando ocurra
-- Verificar jefatura OEC post cambio gobierno
 - Confirmar mecanismo legal incorporación Textiles como PP
 
 ### Pendientes de producto
@@ -61,6 +71,11 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 - Benchmarking internacional (Alemania Pfand, Francia AGEC)
 - Mapa territorial por región
 - SEO: meta tags por ruta
+
+### Pendientes diseño (Fase 14-15)
+- Mapa territorial con Leaflet (gestores NFU por región, cobertura GRANSIC, convenios ReSimple)
+- Página Análisis recreada con rediseño de escenarios de cumplimiento
+- og-image.png real (capturar desde og-image.html)
 
 ### Para próxima sesión
 Decir: "Continúo sesión Radar Circular" + indicar qué se quiere hacer.
