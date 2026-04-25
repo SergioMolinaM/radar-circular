@@ -1,5 +1,6 @@
 // src/pages/Fiscalizacion.tsx
 import { AlertTriangle, Shield, ExternalLink } from 'lucide-react'
+import { Callout } from '../components/Callout'
 import {
   procesosSancionatorios,
   hitosFiscalizacion,
@@ -25,6 +26,13 @@ export function Fiscalizacion() {
         </p>
         <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
+
+      <Callout variant="explainer" titulo="¿Qué se fiscaliza en la Ley REP?">
+        La Superintendencia del Medio Ambiente (SMA) fiscaliza el cumplimiento de las obligaciones
+        de la Ley 20.920: inscripción en el RETC, adhesión a un sistema de gestión, cumplimiento
+        de metas de recolección y valorización, y entrega de información. Las infracciones pueden
+        ser leves, graves o gravísimas, con multas de hasta 10.000 UTA (~$8.000 millones).
+      </Callout>
 
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

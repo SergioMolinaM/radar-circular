@@ -92,7 +92,7 @@ export function Acerca() {
     <div className="p-8 max-w-3xl space-y-12">
       <div>
         <h2 className="text-2xl font-bold mb-4">Acerca de Radar Circular</h2>
-        <div className="space-y-4 text-stone-400 leading-relaxed">
+        <div className="space-y-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
           <p>
             Radar Circular es una plataforma pública de inteligencia sobre la implementación
             de la Ley 20.920 de Responsabilidad Extendida del Productor en Chile.
@@ -115,22 +115,23 @@ export function Acerca() {
         <h3 className="text-lg font-semibold mb-4">Fuentes oficiales</h3>
         <div className="space-y-3">
           {fuentes.map((f) => (
-            <div key={f.nombre} className="p-4 rounded-lg border border-stone-800">
+            <div key={f.nombre} className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
               <div className="flex items-start justify-between gap-2 mb-1">
                 <div>
-                  <p className="font-medium text-stone-200">{f.nombre}</p>
-                  <p className="text-xs text-stone-500">{f.org}</p>
+                  <p className="font-medium" style={{ color: 'var(--text-primary)' }}>{f.nombre}</p>
+                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{f.org}</p>
                 </div>
                 <a
                   href={f.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-stone-400 hover:text-stone-200 shrink-0"
+                  className="shrink-0 hover:opacity-80 transition-opacity"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <ExternalLink size={14} />
                 </a>
               </div>
-              <p className="text-sm text-stone-400">{f.descripcion}</p>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{f.descripcion}</p>
             </div>
           ))}
         </div>
@@ -140,18 +141,31 @@ export function Acerca() {
         <h3 className="text-lg font-semibold mb-4">Estudios y documentos de referencia</h3>
         <div className="space-y-3">
           {estudios.map((e) => (
-            <div key={e.nombre} className="p-4 rounded-lg border border-stone-800">
-              <p className="font-medium text-stone-200">{e.nombre}</p>
-              <p className="text-xs text-stone-500 mb-1">{e.autor}</p>
-              <p className="text-sm text-stone-400">{e.descripcion}</p>
+            <div key={e.nombre} className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+              <p className="font-medium" style={{ color: 'var(--text-primary)' }}>{e.nombre}</p>
+              <p className="text-xs mb-1" style={{ color: 'var(--text-muted)' }}>{e.autor}</p>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{e.descripcion}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <p className="text-sm text-stone-500 pt-4">
-        Desarrollado por Tercera Letra — Narrativa · Evidencia · Tecnología.
-      </p>
+      <div className="pt-8 space-y-4 border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="flex items-center gap-2">
+          <span className="text-2xl font-bold" style={{ color: 'var(--accent)', fontFamily: "'DM Serif Display', serif" }}>T</span>
+          <h3 className="text-lg font-semibold" style={{ fontFamily: "'DM Serif Display', serif" }}>Tercera Letra</h3>
+        </div>
+        <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          Tercera Letra es una consultora estratégica chilena que trabaja en la intersección
+          de narrativa, evidencia y tecnología. Radar Circular es parte de su línea de productos
+          de inteligencia pública: herramientas digitales que organizan, verifican y hacen accesible
+          información dispersa en fuentes oficiales, con el objetivo de contribuir a la transparencia
+          y democratización de datos relevantes para la política pública y la toma de decisiones empresariales.
+        </p>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+          © {new Date().getFullYear()} Tercera Letra · Narrativa · Evidencia · Tecnología · radar-circular.cl
+        </p>
+      </div>
     </div>
   )
 }

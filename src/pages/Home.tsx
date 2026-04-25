@@ -59,11 +59,11 @@ export function Home() {
       {/* Hero */}
       <div className="space-y-3">
         <h2 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'DM Serif Display', serif" }}>
-          Ley REP en Chile
+          Ley de Responsabilidad Extendida del Productor
         </h2>
         <p style={{ color: 'var(--text-secondary)' }} className="text-lg max-w-2xl leading-relaxed">
           Estado de implementación de la Ley 20.920 de Responsabilidad Extendida del Productor.
-          Datos públicos, trazables a fuente oficial.
+          Datos públicos, trazables a fuentes oficiales.
         </p>
       </div>
 
@@ -76,11 +76,11 @@ export function Home() {
             style={{ backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)' }}
           >
             <div className="flex items-center gap-1.5 mb-1">
-              <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{c.label}</p>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{c.label}</p>
               <Tooltip texto={c.tooltip} />
             </div>
             <p className="text-2xl font-bold">{c.valor}</p>
-            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{c.detalle}</p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{c.detalle}</p>
           </div>
         ))}
       </div>
