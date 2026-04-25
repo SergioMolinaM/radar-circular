@@ -164,13 +164,13 @@ export function DetalleEyE() {
         <h3 className="text-lg font-semibold mb-6">Metas de recolección y valorización (DS 12/2020)</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <MetasTable
-            titulo="Domiciliarios (% del MDP)"
+            titulo="Domiciliarios (% del POM año anterior)"
             columnas={colsDom}
             filas={metasDomiciliarias as unknown as Record<string, string | number>[]}
             nota="Año 12 en adelante (2035+): P&C 70%, Cart.líq. 60%, Metal 55%, Plástico 45%, Vidrio 65%"
           />
           <MetasTable
-            titulo="No domiciliarios (% del MDP)"
+            titulo="No domiciliarios (% del POM año anterior)"
             columnas={colsNoDom}
             filas={metasNoDomiciliarias as unknown as Record<string, string | number>[]}
             nota="Año 9 en adelante (2032+): P&C 85%, Plástico 55%, Metal 70%"

@@ -38,7 +38,7 @@ export const productosPrioritarios: ProductoPrioritario[] = [
       'Papel y cartón, cartón para líquidos, vidrio, plástico y metal. Residuos domiciliarios y no domiciliarios con metas diferenciadas.',
     sistemasGestion: [
       { nombre: 'ReSimple', tipo: 'GRANSIC', estado: 'operativo' },
-      { nombre: 'ProREP', tipo: 'GRANSIC', estado: 'operativo' },
+      { nombre: 'ProREP', tipo: 'colectivo', estado: 'operativo' },
       { nombre: 'GIRO', tipo: 'GRANSIC', estado: 'operativo' },
     ],
     color: '#4A7C59',

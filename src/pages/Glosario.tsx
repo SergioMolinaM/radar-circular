@@ -8,7 +8,7 @@ const terminos = [
   { sigla: 'SIG', nombre: 'Sistema de Gestión', definicion: 'Mecanismo mediante el cual los productores, individual o colectivamente, cumplen las obligaciones de la REP a través de un plan de gestión autorizado.' },
   { sigla: 'SGC', nombre: 'Sistema de Gestión Colectivo', definicion: 'SIG conformado por múltiples productores asociados. Debe ser una corporación sin fines de lucro con informe favorable del TDLC.' },
   { sigla: 'FNE', nombre: 'Fiscalía Nacional Económica', definicion: 'Organismo que investiga y persigue atentados a la libre competencia. Puede actuar en el mercado de gestión de residuos REP.' },
-  { sigla: 'GRANSIC', nombre: 'Gran Sistema Colectivo', definicion: 'SGC con gestión de residuos domiciliarios. Debe celebrar convenios con municipios y cumplir obligaciones adicionales.' },
+  { sigla: 'GRANSIC', nombre: 'Gran Sistema Colectivo', definicion: 'Sistema colectivo de gestión integrado por 20 o más productores no relacionados, constituido para dar cumplimiento a las obligaciones de envases domiciliarios (DS12 art. 2 n°17). Debe celebrar convenios con municipios y cumplir obligaciones de cobertura y recolección.' },
   { sigla: 'MDP', nombre: 'Material Disponible País', definicion: 'Cantidad total de un material que ingresa al mercado nacional en un año, estimada a partir de producción nacional + importaciones − exportaciones.' },
   { sigla: 'MGP', nombre: 'Material Gestionado País', definicion: 'Cantidad de material efectivamente recolectado y valorizado en un año, dentro o fuera de los SIG.' },
   { sigla: 'CTIP', nombre: 'Capacidad Técnica Instalada País', definicion: 'Capacidad total de las plantas de valorización/reciclaje operativas en el país para procesar un material determinado.' },
