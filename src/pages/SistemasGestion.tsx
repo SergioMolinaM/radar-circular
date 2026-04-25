@@ -55,13 +55,13 @@ export function SistemasGestion() {
       <FuenteDatos
         fuente="RETC Open Data — Listado Sistemas de Gestión Aprobados"
         tipo="oficial"
-        fecha="21 de octubre 2025"
+        fecha="6 de noviembre 2025"
         nota="Dato oficial del Ministerio del Medio Ambiente publicado en datosretc.mma.gob.cl"
       />
 
       <div className="p-3 rounded-lg border border-amber-900/30 bg-amber-950/10">
         <p className="text-xs text-amber-400">
-          ⚠ Datos de octubre 2025. Pueden existir SIG aprobados después de esa fecha que no aparecen en este listado.
+          ⚠ Datos de noviembre 2025. Pueden existir SIG aprobados después de esa fecha que no aparecen en este listado.
           Verificar en <a href="https://datosretc.mma.gob.cl/dataset/sistemas-de-gestion-aprobados" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-300">RETC Open Data</a>.
         </p>
       </div>

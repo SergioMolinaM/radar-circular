@@ -3,7 +3,7 @@
 const terminos = [
   { sigla: 'PUSU', nombre: 'Plásticos de Un Solo Uso', definicion: 'Ley 21.368 (2021) que regula plásticos de un solo uso y botellas plásticas. Complementa la Ley REP en la reducción de residuos plásticos.' },
   { sigla: 'REP', nombre: 'Responsabilidad Extendida del Productor', definicion: 'Principio según el cual el productor de un producto prioritario es responsable de la organización y financiamiento de la gestión de los residuos que dicho producto genera.' },
-  { sigla: 'OEC', nombre: 'Oficina de Economía Circular', definicion: 'Unidad del MMA responsable de la implementación de la Ley REP, coordinación de decretos y relación con SIG. Jefatura sujeta a verificación tras cambio de gobierno (marzo 2026).' },
+  { sigla: 'OEC', nombre: 'Oficina de Economía Circular', definicion: 'Unidad del MMA responsable de la implementación de la Ley REP, coordinación de decretos y relación con SIG. Jefa: María José Ureta (confirmada en estructura organizacional MMA, abril 2026).' },
   { sigla: 'PP', nombre: 'Producto Prioritario', definicion: 'Sustancia u objeto que, una vez transformado en residuo, queda sujeto a las obligaciones de la REP. La Ley 20.920 define 6 productos prioritarios.' },
   { sigla: 'SIG', nombre: 'Sistema de Gestión', definicion: 'Mecanismo mediante el cual los productores, individual o colectivamente, cumplen las obligaciones de la REP a través de un plan de gestión autorizado.' },
   { sigla: 'SGC', nombre: 'Sistema de Gestión Colectivo', definicion: 'SIG conformado por múltiples productores asociados. Debe ser una corporación sin fines de lucro con informe favorable del TDLC.' },

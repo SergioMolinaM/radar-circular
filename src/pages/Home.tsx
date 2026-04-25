@@ -34,7 +34,7 @@ const cifras = [
   },
   {
     valor: '35', label: 'Sistemas de Gestión', detalle: '12 EyE · 23 NFU',
-    tooltip: 'Mecanismos mediante los cuales los productores cumplen sus obligaciones. Dato oficial: RETC Open Data, octubre 2025.',
+    tooltip: 'Mecanismos mediante los cuales los productores cumplen sus obligaciones. Dato oficial: RETC Open Data, noviembre 2025.',
   },
   {
     valor: '~40.000', label: 'Empresas reguladas', detalle: 'EyE ~17k · P+AEE ~20,5k · NFU ~475',
