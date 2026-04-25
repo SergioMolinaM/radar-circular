@@ -2,7 +2,6 @@
 import { productosPrioritarios } from '../data/productos-prioritarios'
 import { metasDomiciliarias, metasNoDomiciliarias, tonelaje2024 } from '../data/metas-eye'
 import { MetasTable } from '../components/MetasTable'
-import { CumplimientoTable } from '../components/CumplimientoTable'
 import { TonelajeChart } from '../components/TonelajeChart'
 import { MetasLineChart } from '../components/MetasLineChart'
 import { operacionEyENoDom, operacionEyEDom, datosOperativosGRANSIC } from '../data/operacion-eye'
@@ -207,20 +206,20 @@ export function DetalleEyE() {
         <FuenteDatos fuente="Decreto Supremo 12/2020, Tablas de metas" tipo="oficial" />
       </div>
 
-      {/* Cumplimiento */}
-      <div>
-        <h3 className="text-lg font-semibold mb-2">Cumplimiento de metas 2024</h3>
-        <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
-          Tres escenarios que evidencian la brecha entre lo que Chile recicla y lo que el sistema
-          formal contabiliza.
+      {/* Cumplimiento — ahora en página dedicada */}
+      <div className="p-5 rounded-xl" style={{ backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)' }}>
+        <p className="font-medium mb-2" style={{ color: 'var(--text-primary)' }}>Cumplimiento primer año (2024)</p>
+        <p className="text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
+          El análisis detallado de cumplimiento por material — con barras comparativas entre lo gestionado
+          dentro del sistema REP y el reciclaje total del país — está en la sección de Análisis.
         </p>
-        <CumplimientoTable />
-        <FuenteDatos
-          fuente="Estudio Kyklos 2024, Cuadro 14"
-          tipo="estimacion"
-          fecha="Abril 2025"
-          nota="Los escenarios son simulaciones basadas en datos estimados, no mediciones oficiales de la SMA"
-        />
+        <a
+          href="/analisis"
+          className="inline-block text-sm font-medium px-4 py-2 rounded-lg transition-all"
+          style={{ backgroundColor: 'var(--accent)', color: '#fff' }}
+        >
+          Ver análisis de cumplimiento →
+        </a>
       </div>
     </div>
   )
