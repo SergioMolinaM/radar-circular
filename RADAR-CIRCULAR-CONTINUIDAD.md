@@ -1,5 +1,5 @@
 # RADAR CIRCULAR — DOCUMENTO DE CONTINUIDAD
-## Actualizado: 25 de abril de 2026 — Post Fase 14 (Mapa Territorial)
+## Actualizado: 25 de abril de 2026 — Post Fase 15 (Análisis recreada)
 
 ---
 
@@ -36,7 +36,16 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 - Tile layer CARTO dark, coherente con paleta editorial
 - Card de acceso en Home
 
-### Pantallas construidas (Fases 0–14)
+### Fase 15 — Análisis recreada
+
+- Escenarios de cumplimiento rediseñados: nomenclatura "dentro SIG / fuera SIG / total país" reemplaza "SIG / Nacional / Simulación"
+- Nuevo componente CumplimientoPanel con barras comparativas (meta vs dentro SIG vs total país)
+- Callouts explainer + warning sobre fuente de datos (Kyklos, no SMA)
+- Paradoja del reciclaje chileno como bloque destacado
+- DetalleEyE ya no tiene tabla de 3 escenarios — link a /analisis
+- Sidebar restaura "Análisis" en grupo DATOS
+
+### Pantallas construidas (Fases 0–15)
 
 | Ruta | Pantalla | Contenido |
 |---|---|---|
@@ -55,7 +64,7 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 | `/sistemas-gestion` | Sistemas de Gestión | 35 SIG RETC con filtros + alerta antigüedad nov 2025 |
 | `/glosario` | Glosario | 29 términos REP con definiciones |
 | `/acerca` | Acerca de Radar Circular | 10 fuentes + 4 estudios + párrafo Tercera Letra |
-| `/analisis` | (archivada) | Pendiente rediseño en Fase 15 |
+| `/analisis` | Análisis | Cumplimiento año 1 (barras dentro/fuera SIG) + diagnóstico estructural + 6 trabas MEP |
 
 ### Contexto regulatorio post cambio de gobierno (marzo 2026)
 
@@ -81,8 +90,7 @@ Triple lente: Gobierno · Empresa · Producto Digital. Resultado:
 - Mapa territorial por región
 - SEO: meta tags por ruta
 
-### Pendientes diseño (Fase 15+)
-- Página Análisis recreada con rediseño de escenarios de cumplimiento
+### Pendientes diseño (Fase 16+)
 - og-image.png real (capturar desde og-image.html)
 - Mapa: agregar capa de gestores EyE cuando RETC publique datos actualizados
 
