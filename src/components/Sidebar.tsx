@@ -1,22 +1,21 @@
 // src/components/Sidebar.tsx
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Home, BarChart3, Info, Menu, X, Shield, FileText, BookOpen, CalendarClock, Scale, Building2 } from 'lucide-react'
+import { Home, BarChart3, Info, Menu, X, Shield, BookOpen, CalendarClock, Scale, Building2 } from 'lucide-react'
 import { productosPrioritarios } from '../data/productos-prioritarios'
 import { RadarLogo } from './RadarLogo'
 
 const datosItems = [
-  { to: '/panorama', label: 'Panorama REP', icon: BarChart3 },
+  { to: '/panorama', label: 'Situación actual', icon: BarChart3 },
   { to: '/fiscalizacion', label: 'Fiscalización', icon: Shield },
   { to: '/sistemas-gestion', label: 'Sistemas de Gestión', icon: Building2 },
-  { to: '/analisis', label: 'Análisis', icon: FileText },
-  { to: '/hoja-de-ruta', label: 'Hoja de ruta', icon: CalendarClock },
+  { to: '/hoja-de-ruta', label: 'Lo que viene', icon: CalendarClock },
 ]
 
 const referenciaItems = [
   { to: '/ley-rep', label: 'La Ley REP', icon: Scale },
   { to: '/glosario', label: 'Glosario', icon: BookOpen },
-  { to: '/acerca', label: 'Acerca de', icon: Info },
+  { to: '/acerca', label: 'Acerca de Radar Circular', icon: Info },
 ]
 
 export function Sidebar() {

@@ -10,7 +10,7 @@ import { DetalleNFU } from './pages/DetalleNFU'
 import { Acerca } from './pages/Acerca'
 import { Fiscalizacion } from './pages/Fiscalizacion'
 import { DetallePAEE } from './pages/DetallePAEE'
-import { Analisis } from './pages/Analisis'
+// import { Analisis } from './pages/Analisis' // Archivado — pendiente rediseño Fase 15
 import { Glosario } from './pages/Glosario'
 import { LeyRep } from './pages/LeyRep'
 import { HojaDeRuta } from './pages/HojaDeRuta'
@@ -26,7 +26,7 @@ function App() {
           <Route path="panorama" element={<Panorama />} />
           <Route path="fiscalizacion" element={<Fiscalizacion />} />
           <Route path="sistemas-gestion" element={<SistemasGestion />} />
-          <Route path="analisis" element={<Analisis />} />
+          {/* <Route path="analisis" element={<Analisis />} /> Archivado — pendiente rediseño Fase 15 */}
           <Route path="glosario" element={<Glosario />} />
           <Route path="hoja-de-ruta" element={<HojaDeRuta />} />
           <Route path="ley-rep" element={<LeyRep />} />
