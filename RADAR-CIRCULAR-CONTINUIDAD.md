@@ -1,5 +1,48 @@
 # RADAR CIRCULAR — DOCUMENTO DE CONTINUIDAD
-## Actualizado: 25 de abril de 2026 — Post Fase 15 (Análisis recreada)
+## Actualizado: 26 de abril de 2026 — Post F14B + F15 + F15B + OG-IMAGE
+
+---
+
+## Sesión 26-abr-2026 — F14B + F15 + F15B + OG-IMAGE
+
+### Fases completadas
+- **F14B**: Mapa territorial con 3 capas de datos reales (52 comunas ReSimple, 102 EyE IRAR RETC, 29 NFU IRAR RETC)
+- **F15**: Análisis con datos oficiales cumplimiento SNIFA 2024 (47 declaraciones SIG)
+- **F15B**: Contexto de mercado Kyklos/ANIR + Benchmarking internacional (8 países)
+- **OG-IMAGE**: og-image.png 1200x630 + meta tags OG/Twitter en index.html
+
+### Archivos nuevos en src/data/
+- datos-resimple-2025.ts (52 comunas, 11 regiones, fuente resimple.cl)
+- datos-irar-retc-2024.ts (102 EyE + 29 NFU con lat/lon, fuente RETC IRAR-SINADER 2024)
+- datos-cumplimiento-rep-snifa-2024.ts (47 declaraciones, fuente SNIFA DatosAbiertos2024.xlsx)
+- datos-contexto-mercado-kyklos-2024.ts (MDP/MGP por material, fuente ANIR/Kyklos 2024)
+- datos-benchmarking-internacional.ts (UE, Alemania, Francia, Bélgica, Corea, Colombia, Brasil, Chile)
+
+### Verificaciones regulatorias (25-abr-2026)
+- P+AEE: toma razón CGR 23-abr-2026, pendiente DO
+- DS47 ALU: publicado nov 2024, metas desde ene 2027
+- Sancionatorios REP: solo Huawei + Insacomex (jun 2025), sin nuevos
+- SIG aprobados: 35 (RETC nov 2025, dato vigente)
+- SISREP: 410 CI catastrados (abr 2026)
+- Valora Más NFU: dato "pendiente" en SNIFA
+
+### Alertas sobre datos
+- Autorentas del Pacífico NFU: línea base 880.974 ton anómala
+- GIRO metal no dom: tratamiento > base (214%)
+- ProREP papel no dom: tratamiento > base (109%)
+- 5 instalaciones RETC declaradas RM con coordenadas fuera de RM
+- Año más reciente: 2024 (año 3 se declarará mayo-junio 2026)
+
+### Pendientes próxima sesión
+1. Verificar nuevos sancionatorios SMA
+2. Actualizar P+AEE cuando se publique en DO
+3. Verificar DatosAbiertos2025 SNIFA (disponible ~junio 2026)
+4. Archivar rep-envases-embalajes
+5. Evaluar integración RETC destinatarios y generación municipal
+
+---
+
+## Sesión 25-abr-2026 — Auditoría + Fase 13 + Fase 15 original
 
 ---
 
