@@ -36,24 +36,24 @@ export function Glosario() {
   return (
     <div className="p-8 max-w-3xl">
       <h2 className="text-2xl font-bold mb-2">Glosario REP</h2>
-      <p className="text-stone-400 mb-8">
+      <p className="mb-8" style={{ color: 'var(--text-secondary)' }}>
         Términos, siglas y definiciones del ecosistema de la Ley de Responsabilidad
         Extendida del Productor en Chile.
       </p>
       <div className="space-y-0">
         {terminos.map((t) => (
-          <div key={t.sigla} className="py-4 border-b border-stone-800/50">
+          <div key={t.sigla} className="py-4" style={{ borderBottom: '1px solid var(--border)' }}>
             <div className="flex items-baseline gap-3 mb-1">
-              <span className="text-sm font-mono font-bold text-stone-200 shrink-0 w-16">
+              <span className="text-sm font-mono font-bold shrink-0 w-16" style={{ color: 'var(--text-primary)' }}>
                 {t.sigla}
               </span>
-              <span className="text-sm font-medium text-stone-300">{t.nombre}</span>
+              <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{t.nombre}</span>
             </div>
-            <p className="text-sm text-stone-400 pl-[76px]">{t.definicion}</p>
+            <p className="text-sm pl-[76px]" style={{ color: 'var(--text-secondary)' }}>{t.definicion}</p>
           </div>
         ))}
       </div>
-      <p className="text-xs text-stone-600 mt-6">
+      <p className="text-xs mt-6" style={{ color: 'var(--text-muted)' }}>
         Definiciones basadas en la Ley 20.920 y sus decretos reglamentarios.
       </p>
     </div>

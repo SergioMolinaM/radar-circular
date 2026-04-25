@@ -8,6 +8,7 @@ import { MetasLineChart } from '../components/MetasLineChart'
 import { operacionEyENoDom, operacionEyEDom, datosOperativosGRANSIC } from '../data/operacion-eye'
 import { FuenteDatos } from '../components/FuenteDatos'
 import { UltimaActualizacion } from '../components/UltimaActualizacion'
+import { Callout } from '../components/Callout'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -45,19 +46,19 @@ export function DetalleEyE() {
             Vigente
           </span>
         </div>
-        <p className="text-stone-400 mb-2">{pp.descripcion}</p>
-        <p className="text-sm text-stone-500">{pp.decreto} · Vigencia: {pp.fechaVigencia}</p>
+        <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>{pp.descripcion}</p>
+        <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{pp.decreto} · Vigencia: {pp.fechaVigencia}</p>
         <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
       {/* SIG */}
-      <div className="p-5 rounded-xl border border-stone-800">
-        <p className="text-xs text-stone-500 mb-3">Sistemas de Gestión (GRANSIC)</p>
+      <div className="p-5 rounded-xl" style={{ border: '1px solid var(--border)' }}>
+        <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>Sistemas de Gestión (GRANSIC)</p>
         <div className="flex flex-wrap gap-3">
           {pp.sistemasGestion.map((sg) => (
             <div key={sg.nombre} className="flex items-center gap-2">
               <span className="font-medium">{sg.nombre}</span>
-              <span className="text-xs px-2 py-0.5 rounded bg-stone-800 text-stone-400">
+              <span className="text-xs px-2 py-0.5 rounded" style={{ backgroundColor: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}>
                 {sg.tipo}
               </span>
             </div>
@@ -71,28 +72,28 @@ export function DetalleEyE() {
         <p className="text-xs text-amber-400 mb-4">
           ⚠ Datos de diciembre 2024 (País Circular). La operación ha avanzado desde entonces.
         </p>
-        <p className="text-xs text-stone-500 mb-4">Fuente: País Circular, diciembre 2024</p>
+        <p className="text-xs mb-4" style={{ color: 'var(--text-muted)' }}>Fuente: País Circular, diciembre 2024</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-5 rounded-xl border border-stone-800">
-            <p className="text-sm font-medium text-stone-300 mb-3">No domiciliarios</p>
-            <p className="text-xs text-stone-500 mb-2">{operacionEyENoDom.numSIG} SIG · ~{(operacionEyENoDom.totalToneladas / 1000).toFixed(0)}k ton declaradas</p>
+          <div className="p-5 rounded-xl" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-primary)' }}>No domiciliarios</p>
+            <p className="text-xs mb-2" style={{ color: 'var(--text-muted)' }}>{operacionEyENoDom.numSIG} SIG · ~{(operacionEyENoDom.totalToneladas / 1000).toFixed(0)}k ton declaradas</p>
             <div className="space-y-1.5">
               {operacionEyENoDom.distribucion.map((d) => (
                 <div key={d.sig} className="flex items-center justify-between text-sm">
-                  <span className="text-stone-400">{d.sig}</span>
-                  <span className="text-stone-300 font-medium">{d.porcentaje}%</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>{d.sig}</span>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{d.porcentaje}%</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="p-5 rounded-xl border border-stone-800">
-            <p className="text-sm font-medium text-stone-300 mb-3">Domiciliarios</p>
-            <p className="text-xs text-stone-500 mb-2">{operacionEyEDom.numGRANSIC} GRANSIC · ~{(operacionEyEDom.totalToneladas / 1000).toFixed(0)}k ton declaradas</p>
+          <div className="p-5 rounded-xl" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-primary)' }}>Domiciliarios</p>
+            <p className="text-xs mb-2" style={{ color: 'var(--text-muted)' }}>{operacionEyEDom.numGRANSIC} GRANSIC · ~{(operacionEyEDom.totalToneladas / 1000).toFixed(0)}k ton declaradas</p>
             <div className="space-y-1.5">
               {operacionEyEDom.distribucion.map((d) => (
                 <div key={d.sig} className="flex items-center justify-between text-sm">
-                  <span className="text-stone-400">{d.sig}</span>
-                  <span className="text-stone-300 font-medium">{d.porcentaje}%</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>{d.sig}</span>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{d.porcentaje}%</span>
                 </div>
               ))}
             </div>
@@ -101,28 +102,35 @@ export function DetalleEyE() {
         <FuenteDatos fuente="País Circular, diciembre 2024" tipo="sectorial" fecha="Diciembre 2024" />
       </div>
 
+      <Callout variant="info" titulo="Dos tipos de envases, dos mundos distintos">
+        Los envases domiciliarios (lo que llega a tu casa) son gestionados por GRANSIC — sistemas
+        grandes con 20+ productores que deben recolectar puerta a puerta. Los no domiciliarios
+        (embalajes industriales) operan con menos SIG pero con tasas de valorización mucho más altas
+        porque el material se concentra en menos puntos.
+      </Callout>
+
       {/* Datos operativos GRANSIC */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-4 rounded-lg border border-stone-800">
-          <p className="text-sm font-medium text-stone-300 mb-2">ReSimple</p>
-          <div className="space-y-1 text-sm text-stone-400">
+        <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+          <p className="text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>ReSimple</p>
+          <div className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
             <p>{datosOperativosGRANSIC.resimple.conveniosMunicipales} convenios municipales</p>
             <p>{datosOperativosGRANSIC.resimple.campanasInstaladas.toLocaleString('es-CL')} campanas instaladas</p>
             <p>{datosOperativosGRANSIC.resimple.comunasRecoleccion} comunas con recolección</p>
             <p>{(datosOperativosGRANSIC.resimple.viviendasCobertura / 1000000).toFixed(1)}M viviendas cobertura</p>
           </div>
         </div>
-        <div className="p-4 rounded-lg border border-stone-800">
-          <p className="text-sm font-medium text-stone-300 mb-2">ProREP</p>
-          <div className="space-y-1 text-sm text-stone-400">
+        <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+          <p className="text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>ProREP</p>
+          <div className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
             <p>{datosOperativosGRANSIC.prorep.socios}+ socios</p>
             <p>Modelo: {datosOperativosGRANSIC.prorep.modelo}</p>
             <p>Exclusivo {datosOperativosGRANSIC.prorep.exclusivo}</p>
           </div>
         </div>
-        <div className="p-4 rounded-lg border border-stone-800">
-          <p className="text-sm font-medium text-stone-300 mb-2">GIRO</p>
-          <div className="space-y-1 text-sm text-stone-400">
+        <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+          <p className="text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>GIRO</p>
+          <div className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
             <p>{(datosOperativosGRANSIC.giro.beneficiarios / 1000).toFixed(0)}k beneficiarios</p>
             <p>{datosOperativosGRANSIC.giro.cobertura}</p>
             <p className="text-amber-400">{datosOperativosGRANSIC.giro.licitacionesDesiertas} licitaciones desiertas</p>
@@ -139,22 +147,22 @@ export function DetalleEyE() {
       {/* KPIs */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Cifras 2024</h3>
-        <p className="text-xs text-stone-500 mb-4">Fuente: Estudio Kyklos 2024 (ANIR-ReSimple)</p>
+        <p className="text-xs mb-4" style={{ color: 'var(--text-muted)' }}>Fuente: Estudio Kyklos 2024 (ANIR-ReSimple)</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">MDP total</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>MDP total</p>
             <p className="text-xl font-bold">{formatTon(totalMdp)} ton</p>
           </div>
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">MGP total</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>MGP total</p>
             <p className="text-xl font-bold">{formatTon(totalMgp)} ton</p>
           </div>
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">Tasa valorización</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Tasa valorización</p>
             <p className="text-xl font-bold">33,0%</p>
           </div>
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">MGP dom. en SIG</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>MGP dom. en SIG</p>
             <p className="text-xl font-bold text-amber-400">16,6%</p>
           </div>
         </div>
@@ -181,10 +189,16 @@ export function DetalleEyE() {
         </div>
       </div>
 
+      <Callout variant="explainer" titulo="¿Cómo leer esta tabla?">
+        Cada porcentaje indica cuánto debe valorizar un productor respecto de lo que introdujo al mercado
+        el año anterior (POM). Por ejemplo, si una empresa puso 100 toneladas de plástico en el mercado
+        en 2025, en 2026 debe valorizar al menos 8 toneladas (8%). La meta sube cada año hasta estabilizarse.
+      </Callout>
+
       {/* Trayectoria visual */}
       <div>
         <h3 className="text-lg font-semibold mb-2">Trayectoria de metas al 2035</h3>
-        <p className="text-sm text-stone-400 mb-4">
+        <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
           Las curvas muestran la pendiente de exigencia que enfrenta el sistema.
           Para domiciliarios, el cartón para líquidos parte con la misma meta que papel y cartón
           pero termina 10 puntos abajo — reflejo de la dificultad técnica del material multicapa.
@@ -196,7 +210,7 @@ export function DetalleEyE() {
       {/* Cumplimiento */}
       <div>
         <h3 className="text-lg font-semibold mb-2">Cumplimiento de metas 2024</h3>
-        <p className="text-sm text-stone-400 mb-6">
+        <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
           Tres escenarios que evidencian la brecha entre lo que Chile recicla y lo que el sistema
           formal contabiliza.
         </p>

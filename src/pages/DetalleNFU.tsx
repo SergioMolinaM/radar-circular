@@ -7,6 +7,7 @@ import { metasNFU, gestoresNFU, datosClaveNFU } from '../data/datos-nfu'
 import { MetasTable } from '../components/MetasTable'
 import { FuenteDatos } from '../components/FuenteDatos'
 import { UltimaActualizacion } from '../components/UltimaActualizacion'
+import { Callout } from '../components/Callout'
 
 function formatTon(n: number) {
   return n.toLocaleString('es-CL')
@@ -40,19 +41,25 @@ export function DetalleNFU() {
             Vigente
           </span>
         </div>
-        <p className="text-stone-400 mb-2">{pp.descripcion}</p>
-        <p className="text-sm text-stone-500">{pp.decreto} · Vigencia: {pp.fechaVigencia}</p>
+        <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>{pp.descripcion}</p>
+        <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{pp.decreto} · Vigencia: {pp.fechaVigencia}</p>
         <UltimaActualizacion fecha="25 de abril de 2026" />
       </div>
 
+      <Callout variant="explainer" titulo="¿Qué pasa con un neumático usado?">
+        Un NFU puede ser recauchado (extender su vida útil), triturado para obtener caucho granulado
+        (canchas sintéticas, asfalto), o coprocesado como combustible alternativo en cementeras.
+        El DS8/2019 fija metas de valorización que suben del 25% al 90% en 6 años.
+      </Callout>
+
       {/* SIG */}
-      <div className="p-5 rounded-xl border border-stone-800">
-        <p className="text-xs text-stone-500 mb-3">Sistemas de Gestión Colectivos</p>
+      <div className="p-5 rounded-xl" style={{ border: '1px solid var(--border)' }}>
+        <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>Sistemas de Gestión Colectivos</p>
         <div className="flex flex-wrap gap-3">
           {pp.sistemasGestion.map((sg) => (
             <div key={sg.nombre} className="flex items-center gap-2">
               <span className="font-medium">{sg.nombre}</span>
-              <span className="text-xs px-2 py-0.5 rounded bg-stone-800 text-stone-400">
+              <span className="text-xs px-2 py-0.5 rounded" style={{ backgroundColor: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}>
                 {sg.tipo}
               </span>
             </div>
@@ -63,26 +70,26 @@ export function DetalleNFU() {
       {/* KPIs */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Cifras clave</h3>
-        <p className="text-xs text-stone-500 mb-4">
+        <p className="text-xs mb-4" style={{ color: 'var(--text-muted)' }}>
           Fuentes: Presentación CORFO MEP NFU, SIGA, Valora Más, Chile Neumáticos AG, Informe MEP NFU V1
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">Gestores RETC</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Gestores RETC</p>
             <p className="text-xl font-bold">{d.gestoresTotalRETC}</p>
           </div>
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">CTIP 2025</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>CTIP 2025</p>
             <p className="text-xl font-bold">{formatTon(d.ctipInput2025)} ton</p>
           </div>
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">Stock acumulado</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Stock acumulado</p>
             <p className="text-xl font-bold text-amber-400">{formatTon(d.stockAcumuladoTon)} ton</p>
           </div>
-          <div className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">Free-riders</p>
+          <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Free-riders</p>
             <p className="text-xl font-bold text-red-400">{d.porcentajeFreeRiders}%</p>
-            <p className="text-xs text-stone-500">{d.importadoresSinSig} de {d.importadoresTotal} importadores</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{d.importadoresSinSig} de {d.importadoresTotal} importadores</p>
           </div>
         </div>
       </div>
@@ -98,14 +105,14 @@ export function DetalleNFU() {
       <div className="space-y-3">
         <div className="p-4 rounded-lg border border-amber-900/50 bg-amber-950/20">
           <p className="text-sm text-amber-300 font-medium mb-1">Recauchaje no contabilizado</p>
-          <p className="text-sm text-stone-400">
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
             ~{formatTon(d.recauchajeTonAnual)} ton/año de neumáticos Cat. A son recauchados (reutilización), pero
             no se reconocen como cumplimiento de metas de valorización.
           </p>
         </div>
-        <div className="p-4 rounded-lg border border-stone-800">
-          <p className="text-sm text-stone-300 font-medium mb-1">Revisión DS 8 obligatoria</p>
-          <p className="text-sm text-stone-400">
+        <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+          <p className="text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }}>Revisión DS 8 obligatoria</p>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
             El decreto debe revisarse antes de {d.revisionDS8Antes} (art. 35 del Reglamento).
             El salto de metas de 50% a 80% en 2026, sin mercado consolidado para subproductos,
             es el principal riesgo operativo del sector.
@@ -121,32 +128,32 @@ export function DetalleNFU() {
             <BarChart data={gestoresChartData} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
               <XAxis
                 dataKey="region"
-                tick={{ fill: '#78716c', fontSize: 12 }}
-                axisLine={{ stroke: '#292524' }}
+                tick={{ fill: 'var(--text-muted)', fontSize: 12 }}
+                axisLine={{ stroke: 'var(--border)' }}
                 tickLine={false}
               />
               <YAxis
-                tick={{ fill: '#78716c', fontSize: 12 }}
+                tick={{ fill: 'var(--text-muted)', fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
               />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: '#1c1917',
-                  border: '1px solid #292524',
+                  backgroundColor: 'var(--bg-surface)',
+                  border: '1px solid var(--border)',
                   borderRadius: '8px',
                   fontSize: '13px',
                 }}
-                labelStyle={{ color: '#d6d3d1' }}
+                labelStyle={{ color: 'var(--text-primary)' }}
               />
-              <Legend wrapperStyle={{ fontSize: '12px', color: '#a8a29e' }} />
+              <Legend wrapperStyle={{ fontSize: '12px', color: 'var(--text-secondary)' }} />
               <Bar dataKey="Recolección" fill="#57534e" radius={[4, 4, 0, 0]} />
               <Bar dataKey="Almacenamiento" fill="#78716c" radius={[4, 4, 0, 0]} />
               <Bar dataKey="Valorización" fill="#4A7C59" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <p className="text-xs text-stone-600 mt-2">
+        <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
           Total: {d.gestoresTotalRETC} gestores registrados en RETC 2025. "Otras regiones" agrupa 33 gestores en regiones con menor concentración.
         </p>
       </div>

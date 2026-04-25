@@ -27,7 +27,7 @@ export function SistemasGestion() {
     <div className="p-8 max-w-5xl space-y-8">
       <div>
         <h2 className="text-2xl font-bold mb-2">Sistemas de Gestión aprobados</h2>
-        <p className="text-stone-400 mb-1">
+        <p className="mb-1" style={{ color: 'var(--text-secondary)' }}>
           Listado oficial de todos los SIG autorizados por el MMA para operar bajo la Ley REP.
         </p>
         <UltimaActualizacion fecha="25 de abril de 2026" />
@@ -35,20 +35,20 @@ export function SistemasGestion() {
 
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="p-4 rounded-lg border border-stone-800">
-          <p className="text-xs text-stone-500">Total aprobados</p>
+        <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Total aprobados</p>
           <p className="text-2xl font-bold">{resumen.totalAprobados}</p>
         </div>
         {resumen.porPP.map((pp) => (
-          <div key={pp.pp} className="p-4 rounded-lg border border-stone-800">
-            <p className="text-xs text-stone-500">{pp.pp}</p>
+          <div key={pp.pp} className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{pp.pp}</p>
             <p className="text-xl font-bold">{pp.total}</p>
-            <p className="text-xs text-stone-500">{pp.detalle}</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{pp.detalle}</p>
           </div>
         ))}
-        <div className="p-4 rounded-lg border border-stone-800">
-          <p className="text-xs text-stone-500">Sin SIG aprobado aún</p>
-          <p className="text-sm text-stone-400 mt-1">ALU · P+AEE · BFU · Textiles</p>
+        <div className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Sin SIG aprobado aún</p>
+          <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>ALU · P+AEE · BFU · Textiles</p>
         </div>
       </div>
 
@@ -69,41 +69,45 @@ export function SistemasGestion() {
       {/* Filtros */}
       <div className="flex flex-wrap gap-4">
         <div className="flex gap-2">
-          <span className="text-xs text-stone-500 self-center mr-1">PP:</span>
+          <span className="text-xs self-center mr-1" style={{ color: 'var(--text-muted)' }}>PP:</span>
           {(['todos', 'eye', 'nfu'] as FiltroPP[]).map((f) => (
             <button
               key={f}
               onClick={() => setFiltroPP(f)}
-              className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                filtroPP === f ? 'bg-stone-800 text-stone-100' : 'text-stone-500 hover:text-stone-300 hover:bg-stone-900'
-              }`}
+              className="px-3 py-1.5 rounded-lg text-sm transition-colors"
+              style={{
+                backgroundColor: filtroPP === f ? 'var(--bg-elevated)' : 'transparent',
+                color: filtroPP === f ? 'var(--text-primary)' : 'var(--text-muted)',
+              }}
             >
               {f === 'todos' ? 'Todos' : f === 'eye' ? 'EyE' : 'NFU'}
             </button>
           ))}
         </div>
         <div className="flex gap-2">
-          <span className="text-xs text-stone-500 self-center mr-1">Tipo:</span>
+          <span className="text-xs self-center mr-1" style={{ color: 'var(--text-muted)' }}>Tipo:</span>
           {(['todos', 'GRANSIC', 'Colectivo', 'Individual'] as FiltroTipo[]).map((f) => (
             <button
               key={f}
               onClick={() => setFiltroTipo(f)}
-              className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                filtroTipo === f ? 'bg-stone-800 text-stone-100' : 'text-stone-500 hover:text-stone-300 hover:bg-stone-900'
-              }`}
+              className="px-3 py-1.5 rounded-lg text-sm transition-colors"
+              style={{
+                backgroundColor: filtroTipo === f ? 'var(--bg-elevated)' : 'transparent',
+                color: filtroTipo === f ? 'var(--text-primary)' : 'var(--text-muted)',
+              }}
             >
               {f === 'todos' ? 'Todos' : f}
             </button>
           ))}
         </div>
-        <span className="text-xs text-stone-500 self-center ml-auto">{filtrados.length} resultados</span>
+        <span className="text-xs self-center ml-auto" style={{ color: 'var(--text-muted)' }}>{filtrados.length} resultados</span>
       </div>
 
       {/* Tabla */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-stone-800 text-stone-400 text-left">
+            <tr className="text-left" style={{ borderBottom: '1px solid var(--border)', color: 'var(--text-secondary)' }}>
               <th className="pb-3 pr-4">#</th>
               <th className="pb-3 pr-4">Nombre</th>
               <th className="pb-3 pr-4">PP</th>
@@ -116,22 +120,22 @@ export function SistemasGestion() {
             {filtrados.map((sig) => {
               const pp = productosPrioritarios.find((p) => p.id === sig.ppId)
               return (
-                <tr key={sig.n} className="border-b border-stone-800/50">
-                  <td className="py-2.5 pr-4 text-stone-500">{sig.n}</td>
-                  <td className="py-2.5 pr-4 text-stone-200">{sig.nombre}</td>
+                <tr key={sig.n} style={{ borderBottom: '1px solid var(--border)' }}>
+                  <td className="py-2.5 pr-4" style={{ color: 'var(--text-muted)' }}>{sig.n}</td>
+                  <td className="py-2.5 pr-4" style={{ color: 'var(--text-primary)' }}>{sig.nombre}</td>
                   <td className="py-2.5 pr-4">
                     <span className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full" style={{ backgroundColor: pp?.color }} />
-                      <span className="text-stone-400">{sig.ppId === 'eye' ? 'EyE' : 'NFU'}</span>
+                      <span style={{ color: 'var(--text-secondary)' }}>{sig.ppId === 'eye' ? 'EyE' : 'NFU'}</span>
                     </span>
                   </td>
-                  <td className="py-2.5 pr-4 text-stone-400">{sig.categoria}</td>
+                  <td className="py-2.5 pr-4" style={{ color: 'var(--text-secondary)' }}>{sig.categoria}</td>
                   <td className="py-2.5 pr-4">
                     <span className={`text-xs px-2 py-0.5 rounded ${tipoColor[sig.tipo]}`}>
                       {sig.tipo}
                     </span>
                   </td>
-                  <td className="py-2.5 text-stone-500">{sig.fechaAprobacion}</td>
+                  <td className="py-2.5" style={{ color: 'var(--text-muted)' }}>{sig.fechaAprobacion}</td>
                 </tr>
               )
             })}

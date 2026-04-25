@@ -46,7 +46,7 @@ export function LeyRep() {
       {/* Qué es */}
       <div>
         <h2 className="text-2xl font-bold mb-4">La Ley REP en Chile</h2>
-        <div className="space-y-4 text-stone-400 leading-relaxed">
+        <div className="space-y-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
           <p>
             La Ley 20.920 (2016) establece la Responsabilidad Extendida del Productor como
             instrumento central de la gestión de residuos en Chile. Quien introduce un producto
@@ -65,34 +65,34 @@ export function LeyRep() {
       {/* Cómo funciona */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Cómo funciona el sistema</h3>
-        <div className="p-5 rounded-xl border border-stone-800 text-sm text-stone-400 leading-relaxed space-y-3">
+        <div className="p-5 rounded-xl text-sm leading-relaxed space-y-3" style={{ border: '1px solid var(--border)', color: 'var(--text-secondary)' }}>
           <p>
-            <span className="text-stone-200 font-medium">1. Declaración:</span> Los productores
+            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>1. Declaración:</span> Los productores
             declaran los productos prioritarios puestos en el mercado a través de Ventanilla Única
             del RETC (MMA).
           </p>
           <p>
-            <span className="text-stone-200 font-medium">2. Adhesión:</span> Los productores
+            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>2. Adhesión:</span> Los productores
             se adhieren a un Sistema de Gestión (individual o colectivo). Los SGC requieren
             informe favorable del TDLC.
           </p>
           <p>
-            <span className="text-stone-200 font-medium">3. Plan de gestión:</span> El SIG
+            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>3. Plan de gestión:</span> El SIG
             presenta un plan al MMA con estrategia de recolección, valorización y convenios
             municipales. El MMA lo aprueba.
           </p>
           <p>
-            <span className="text-stone-200 font-medium">4. Operación:</span> El SIG licita
+            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>4. Operación:</span> El SIG licita
             la gestión a gestores autorizados. Los GRANSIC celebran convenios con municipios
             para residuos domiciliarios.
           </p>
           <p>
-            <span className="text-stone-200 font-medium">5. Reporte:</span> Los SIG reportan
+            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>5. Reporte:</span> Los SIG reportan
             mensualmente a través del SISREP (SMA): toneladas recolectadas y valorizadas,
             por material, gestor y operación.
           </p>
           <p>
-            <span className="text-stone-200 font-medium">6. Fiscalización:</span> La SMA
+            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>6. Fiscalización:</span> La SMA
             verifica el cumplimiento de metas. Puede iniciar procedimientos sancionatorios
             por infracciones gravísimas (art. 39 Ley 20.920).
           </p>
@@ -104,9 +104,9 @@ export function LeyRep() {
         <h3 className="text-lg font-semibold mb-4">Actores del ecosistema</h3>
         <div className="space-y-3">
           {actores.map((a) => (
-            <div key={a.nombre} className="p-4 rounded-lg border border-stone-800">
-              <p className="text-sm font-medium text-stone-200 mb-1">{a.nombre}</p>
-              <p className="text-sm text-stone-400">{a.rol}</p>
+            <div key={a.nombre} className="p-4 rounded-lg" style={{ border: '1px solid var(--border)' }}>
+              <p className="text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }}>{a.nombre}</p>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{a.rol}</p>
             </div>
           ))}
         </div>
@@ -115,7 +115,7 @@ export function LeyRep() {
       {/* Cronología */}
       <div>
         <h3 className="text-lg font-semibold mb-2">Cronología institucional</h3>
-        <p className="text-xs text-stone-500 mb-4">
+        <p className="text-xs mb-4" style={{ color: 'var(--text-muted)' }}>
           Hitos principales de la implementación de la Ley REP.
         </p>
         <div className="space-y-0">
@@ -123,16 +123,16 @@ export function LeyRep() {
             <div key={i} className="flex gap-4 pb-5">
               <div className="flex flex-col items-center">
                 <div className={`w-2.5 h-2.5 rounded-full shrink-0 mt-1.5 ${tipoColor[h.tipo]}`} />
-                {i < cronologia.length - 1 && <div className="w-px flex-1 bg-stone-800" />}
+                {i < cronologia.length - 1 && <div className="w-px flex-1" style={{ backgroundColor: 'var(--border)' }} />}
               </div>
               <div>
-                <p className="text-xs text-stone-500">{h.año}</p>
-                <p className="text-sm text-stone-300">{h.evento}</p>
+                <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{h.año}</p>
+                <p className="text-sm" style={{ color: 'var(--text-primary)' }}>{h.evento}</p>
               </div>
             </div>
           ))}
         </div>
-        <div className="flex flex-wrap gap-4 text-xs text-stone-500 mt-2">
+        <div className="flex flex-wrap gap-4 text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
           <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-emerald-400" /> Ley</span>
           <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-400" /> Decreto</span>
           <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-amber-400" /> Hito operativo</span>
@@ -143,7 +143,7 @@ export function LeyRep() {
       {/* Enlaces */}
       <div>
         <h3 className="text-lg font-semibold mb-4">Fuentes oficiales</h3>
-        <p className="text-sm text-stone-400 mb-4">
+        <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
           Radar Circular no reemplaza estas fuentes. Las consolida y contextualiza.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -153,7 +153,8 @@ export function LeyRep() {
               href={e.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 p-3 rounded-lg border border-stone-800 text-sm text-stone-400 hover:text-stone-200 hover:border-stone-700 transition-colors"
+              className="flex items-center gap-2 p-3 rounded-lg text-sm transition-colors hover:opacity-80"
+              style={{ border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
             >
               <ExternalLink size={14} className="shrink-0" />
               {e.label}
