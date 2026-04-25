@@ -30,7 +30,7 @@ export const hitosFuturos: HitoFuturo[] = [
     ppId: 'paee',
     evento: 'Publicación del decreto en el Diario Oficial',
     certeza: 'estimado',
-    fuente: 'Contraloría tomó razón 20-abr-2026. MMA indica publicación "en los próximos días"',
+    fuente: 'Contraloría tomó razón 23-abr-2026. MMA indica publicación "en los próximos días"',
   },
   {
     fecha: 'May 2026',

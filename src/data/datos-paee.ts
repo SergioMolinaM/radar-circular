@@ -30,7 +30,7 @@ export const metasPAEE: MetaPAEE[] = [
 ]
 
 export const datosClavesPAEE = {
-  contraloriaTomaRazon: '20 de abril de 2026',
+  contraloriaTomaRazon: '23 de abril de 2026',
   pendientePublicacionDO: true,
   plazoParaMetas: '24 meses desde publicación DO',
   productoresAEE: 17000,
@@ -75,13 +75,13 @@ export const datosClavesPAEE = {
     nota: '23 años de operación. Plan de crecimiento 2025-2030 incluye aumento de capacidad para RAEE.',
   },
   timeline: [
-    { fecha: '2021', evento: 'Inicio elaboración decreto (procesos separados Pilas y AEE)' },
+    { fecha: '2021', evento: 'Inicio elaboración decreto (procesos separados Pilas y AEE).' },
     { fecha: '2023', evento: 'Fusión procesos Pilas + AEE. Incorporación paneles fotovoltaicos.' },
-    { fecha: 'Mayo 2025', evento: 'Resolución MMA con propuesta final de decreto.' },
-    { fecha: 'Junio 2025', evento: 'Consejo de Ministros para la Sustentabilidad aprueba decreto.' },
-    { fecha: 'Marzo 2026', evento: 'Gobierno retira 43 decretos de Contraloría (cambio de gobierno). P+AEE reingresado a los pocos días.' },
-    { fecha: '20 abril 2026', evento: 'Contraloría General toma razón del decreto.' },
-    { fecha: 'Próximos días', evento: 'Publicación en Diario Oficial (pendiente).' },
+    { fecha: 'Mayo 2025', evento: 'Resolución MMA N°3.413 con propuesta final de decreto.' },
+    { fecha: 'Junio 2025', evento: 'Consejo de Ministros para la Sustentabilidad aprueba decreto (Sesión Ordinaria N°6).' },
+    { fecha: 'Marzo 2026', evento: 'Cambio de gobierno. MMA retira 43 decretos de Contraloría, incluyendo DS N°22/2025 (P+AEE). Decreto es reingresado a trámite.' },
+    { fecha: '23 abril 2026', evento: 'Contraloría General toma razón del decreto (fuente: País Circular, El Desconcierto).' },
+    { fecha: 'Pendiente', evento: 'Publicación en Diario Oficial.' },
     { fecha: '~2028', evento: 'Inicio cumplimiento de metas (24 meses post-publicación DO).' },
   ],
 }

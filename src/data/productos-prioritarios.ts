@@ -79,7 +79,7 @@ export const productosPrioritarios: ProductoPrioritario[] = [
     estadoDecreto: 'pre-publicacion',
     fechaVigencia: null,
     descripcion:
-      'Contraloría tomó razón el 20 de abril de 2026. Pendiente publicación en Diario Oficial. Incluye pilas (<5kg), aparatos eléctricos y electrónicos, y paneles fotovoltaicos. ~20.500 empresas reguladas. Tasa actual de reciclaje: 4,1%.',
+      'Contraloría tomó razón el 23 de abril de 2026. Pendiente publicación en Diario Oficial. Incluye pilas (<5kg), aparatos eléctricos y electrónicos, y paneles fotovoltaicos. ~20.500 empresas reguladas. Tasa actual de reciclaje: 4,1%. Decreto fue retirado y reingresado tras cambio de gobierno en marzo 2026.',
     sistemasGestion: [
       { nombre: 'Wee Chile', tipo: 'colectivo', estado: 'en-formacion' },
       { nombre: 'TRAEE', tipo: 'colectivo', estado: 'en-formacion' },
