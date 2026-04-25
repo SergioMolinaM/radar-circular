@@ -69,7 +69,7 @@ export const hitosFuturos: HitoFuturo[] = [
     fecha: '2027',
     pp: 'EyE',
     ppId: 'eye',
-    evento: 'Vence compensación entre materiales domiciliarios (art. 21 DS12). Cada material debe cumplir por separado.',
+    evento: 'Vence compensación entre materiales domiciliarios (art. 21 DS12). Cada subcategoría debe cumplir por separado.',
     certeza: 'determinado',
     fuente: 'DS 12/2020, artículo 21',
   },

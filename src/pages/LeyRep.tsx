@@ -15,7 +15,7 @@ const cronologia = [
   { año: '2020', evento: 'DS 12 — Decreto de metas para Envases y Embalajes', tipo: 'decreto' },
   { año: 'Ene 2023', evento: 'Inicio de metas NFU (primer PP con obligaciones activas)', tipo: 'hito' },
   { año: 'Sep 2023', evento: 'Inicio de metas EyE', tipo: 'hito' },
-  { año: '2024', evento: 'SMA dicta instrucción general REP (R.E. 2279/2024)', tipo: 'regulacion' },
+  { año: 'Ene 2024', evento: 'SMA dicta instrucción general REP (R.E. 2279/2024)', tipo: 'regulacion' },
   { año: 'Nov 2024', evento: 'DS 47 — Decreto de metas para Aceites Lubricantes publicado en DO', tipo: 'decreto' },
   { año: 'Ene 2025', evento: 'SISREP operativo — plataforma de reporte SMA', tipo: 'hito' },
   { año: 'Jun 2025', evento: 'Primeros procedimientos sancionatorios REP (Huawei, Insacomex)', tipo: 'hito' },
