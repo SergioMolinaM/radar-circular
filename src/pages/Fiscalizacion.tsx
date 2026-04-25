@@ -61,6 +61,13 @@ export function Fiscalizacion() {
           <AlertTriangle size={20} className="text-red-400" />
           <h3 className="text-lg font-semibold">Procedimientos sancionatorios</h3>
         </div>
+        <div className="p-3 rounded-lg border border-amber-900/30 bg-amber-950/10 mb-4">
+          <p className="text-xs text-amber-400">
+            ⚠ Esta sección muestra los 2 primeros procedimientos sancionatorios REP iniciados en junio 2025.
+            Pueden existir nuevos procedimientos posteriores no reflejados aquí.
+            Verificar en <a href="https://snifa.sma.gob.cl/" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-300">SNIFA</a>.
+          </p>
+        </div>
         <div className="space-y-4">
           {procesosSancionatorios.map((ps) => (
             <div key={ps.id} className="p-5 rounded-xl border border-stone-800">
