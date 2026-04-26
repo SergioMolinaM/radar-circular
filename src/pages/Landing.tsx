@@ -50,15 +50,20 @@ const queNoEs = [
   'No reemplaza al RETC, SNIFA ni SISREP — los hace accesibles',
 ]
 
-/* Ícono radar: anillos concéntricos SVG — blanco para hero oscuro */
-function RadarIcon() {
+/* Radar animado (versión blanca para hero oscuro) */
+function RadarIconWhite({ size = 48 }: { size?: number }) {
   return (
-    <svg width="64" height="64" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="40" r="36" stroke="#ffffff" strokeWidth="1.5" opacity="0.3" />
-      <circle cx="40" cy="40" r="26" stroke="#ffffff" strokeWidth="1.5" opacity="0.5" />
-      <circle cx="40" cy="40" r="16" stroke="#ffffff" strokeWidth="1.5" opacity="0.7" />
-      <circle cx="40" cy="40" r="5" fill="#ffffff" />
-      <line x1="40" y1="40" x2="62" y2="22" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round" />
+    <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+      <circle cx="20" cy="20" r="18" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
+      <circle cx="20" cy="20" r="12" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
+      <circle cx="20" cy="20" r="6" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" />
+      <circle cx="20" cy="20" r="2.5" fill="#ffffff" />
+      <line x1="20" y1="20" x2="20" y2="2" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="4s" repeatCount="indefinite" />
+      </line>
+      <path d="M20 20 L20 2 A18 18 0 0 1 35.6 11.0 Z" fill="rgba(255,255,255,0.12)">
+        <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="4s" repeatCount="indefinite" />
+      </path>
     </svg>
   )
 }
@@ -71,16 +76,16 @@ export function Landing() {
 
       {/* ── Hero verde oscuro ── */}
       <div style={{ background: 'linear-gradient(180deg, #1a4d2e 0%, #2d7a4f 100%)' }}>
-        <div className="max-w-5xl mx-auto px-6 pt-8 md:pt-10 pb-10">
+        <div className="max-w-5xl mx-auto px-6 pt-6 md:pt-8 pb-8">
           <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <RadarIcon />
+            <div className="flex justify-center mb-3">
+              <RadarIconWhite size={48} />
             </div>
-            <h1 className="text-4xl md:text-5xl tracking-tight text-white mb-3">
+            <h1 className="text-3xl md:text-4xl tracking-tight text-white mb-2">
               <span className="font-bold">Radar</span>{' '}
               <span className="font-light">Circular</span>
             </h1>
-            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.9)' }}>
+            <p className="text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.85)' }}>
               La Ley REP obliga a las empresas responsables de envases y embalajes, neumáticos,
               aceites lubricantes, aparatos eléctricos y electrónicos, pilas, baterías y textiles
               a hacerse cargo de la gestión de los residuos derivados de esos productos.
