@@ -6,48 +6,48 @@ import { BarChart3, Map, TrendingUp, Globe, Scale, ShieldCheck, ChevronDown } fr
 const fichas = [
   {
     icon: BarChart3,
-    titulo: 'Cumplimiento oficial',
-    descripcion: 'Datos declarados por cada SIG a la SMA. Tasas de valorización por material con badges de cumplimiento contra metas DS12 y DS8.',
+    titulo: 'Seis fuentes, una interfaz',
+    descripcion: 'Decretos MMA, RETC, SNIFA, datos de SIG, estudios de mercado y registros de Contraloría. Cruzados y contextualizados para que no tengas que hacerlo tú.',
   },
   {
     icon: Map,
     titulo: 'Mapa territorial',
-    descripcion: '52 comunas con recolección ReSimple, 102 instalaciones de valorización EyE y 29 NFU. Coordenadas reales del RETC.',
+    descripcion: '52 comunas con recolección domiciliaria, 102 instalaciones de valorización de envases y 29 de neumáticos. Coordenadas reales, no estimaciones.',
   },
   {
     icon: TrendingUp,
-    titulo: 'Análisis de mercado',
-    descripcion: '1,96 millones de toneladas de envases. 33% de valorización. Más de la mitad del reciclaje ocurre fuera del sistema formal.',
+    titulo: 'Contexto de mercado',
+    descripcion: '1,96 millones de toneladas de envases en Chile. Solo un tercio se valoriza. Más de la mitad del reciclaje ocurre fuera del sistema formal de la Ley REP.',
   },
   {
     icon: Globe,
-    titulo: 'Benchmarking internacional',
-    descripcion: 'Chile comparado con UE, Alemania, Francia, Bélgica, Corea del Sur, Colombia y Brasil. Trayectorias, no rankings.',
+    titulo: 'Chile en el mundo',
+    descripcion: 'Benchmarking con UE, Alemania, Francia, Bélgica, Corea del Sur, Colombia y Brasil. Trayectorias comparadas, no rankings superficiales.',
   },
   {
     icon: Scale,
-    titulo: 'Marco regulatorio',
-    descripcion: 'DS12 envases, DS8 neumáticos, DS47 aceites, P+AEE en trámite. Metas vigentes, plazos y estado de cada decreto.',
+    titulo: 'Marco regulatorio al día',
+    descripcion: 'DS12 envases, DS8 neumáticos, DS47 aceites, P+AEE en trámite. Estado actualizado de cada decreto, plazos y metas vigentes.',
   },
   {
     icon: ShieldCheck,
-    titulo: 'Fuentes verificadas',
-    descripcion: 'Datos del RETC, SNIFA, SMA, ReSimple y ANIR/Kyklos. Cada cifra con fuente explícita y año. Error Cero.',
+    titulo: 'Trazabilidad total',
+    descripcion: 'Cada cifra identifica su fuente oficial y año. Sin datos inventados, sin estimaciones sin advertencia. Lo que no se puede verificar, no se publica.',
   },
 ]
 
 const queEs = [
-  'Una plataforma de inteligencia con datos oficiales sobre la implementación de la Ley REP en Chile',
-  'Un radar de cumplimiento real: qué SIG están cumpliendo las metas y cuáles no',
-  'Un mapa territorial de infraestructura de valorización con coordenadas verificadas',
-  'Una herramienta para tomadores de decisiones: reguladores, SIG, productores, consultores',
+  'Una capa de inteligencia sectorial sobre la Ley REP, construida con datos oficiales cruzados y contextualizados',
+  'Acceso abierto y gratuito a información que hoy requiere conocimiento especializado para encontrar y entender',
+  'Una herramienta para reguladores, sistemas de gestión, productores, gestores, consultores y periodistas',
+  'Independencia editorial completa: presenta hechos, no toma posición',
 ]
 
 const queNoEs = [
-  'No es un medio de comunicación ni un portal de noticias',
-  'No es una herramienta de la SMA ni del MMA (es independiente)',
-  'No contiene datos inventados ni estimaciones sin advertencia',
-  'No reemplaza al RETC, SNIFA ni SISREP — los complementa con análisis',
+  'No es un portal de datos abiertos (Chile tiene varios)',
+  'No es un organismo fiscalizador ni una herramienta de la SMA o el MMA',
+  'No es un chatbot ni un generador de contenido con IA',
+  'No reemplaza al RETC, SNIFA ni SISREP — los hace accesibles',
 ]
 
 /* Ícono radar: anillos concéntricos SVG */
@@ -67,62 +67,74 @@ export function Landing() {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div style={{ backgroundColor: '#0f1419', minHeight: '100vh', color: '#f9fafb' }}>
-      <div className="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <div style={{ minHeight: '100vh' }}>
+      {/* Hero con gradiente verde suave */}
+      <div style={{ background: 'linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%)' }}>
+        <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-14 pb-12">
 
-        {/* ── Header ── */}
-        <div className="text-center space-y-6 mb-20">
-          <div className="flex justify-center">
-            <RadarIcon />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            <span style={{ color: '#2d7a4f' }}>Radar</span>{' '}
-            <span>Circular</span>
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: '#9ca3af' }}>
-            Inteligencia sobre la Ley REP en Chile. Datos oficiales, análisis de cumplimiento y contexto territorial — no opiniones.
-          </p>
-          <div className="pt-4">
-            <Link
-              to="/panel"
-              className="inline-block px-8 py-3.5 rounded-xl text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
-              style={{ background: 'linear-gradient(135deg, #1a4d2e, #2d7a4f)' }}
-            >
-              Ingresar al Radar
-            </Link>
+          {/* ── Header ── */}
+          <div className="text-center space-y-5 mb-14">
+            <div className="flex justify-center">
+              <RadarIcon />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              <span style={{ color: '#1a4d2e' }}>Radar</span>{' '}
+              <span style={{ color: '#1f2937' }}>Circular</span>
+            </h1>
+            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#4b5563' }}>
+              Información pública dispersa, transformada en inteligencia accesible y verificada.
+              Seis fuentes oficiales cruzadas en una sola interfaz.
+            </p>
+            <div className="pt-2">
+              <Link
+                to="/panel"
+                className="inline-block px-8 py-3 rounded-xl text-white font-semibold text-lg transition-all hover:shadow-lg"
+                style={{ backgroundColor: '#2d7a4f' }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#1a4d2e')}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#2d7a4f')}
+              >
+                Ingresar al Radar
+              </Link>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Contenido sobre fondo blanco */}
+      <div className="max-w-5xl mx-auto px-6 pb-12">
 
         {/* ── Grid de fichas ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {fichas.map((f) => (
             <div
               key={f.titulo}
-              className="p-6 rounded-xl transition-all hover:scale-[1.02]"
+              className="p-6 rounded-xl shadow-sm transition-all hover:shadow-md"
               style={{
-                backgroundColor: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
               }}
+              onMouseEnter={e => (e.currentTarget.style.borderColor = '#a8d5ba')}
+              onMouseLeave={e => (e.currentTarget.style.borderColor = '#e5e7eb')}
             >
               <f.icon size={24} style={{ color: '#2d7a4f' }} className="mb-3" />
-              <h3 className="font-semibold mb-2" style={{ color: '#a8d5ba' }}>{f.titulo}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{f.descripcion}</p>
+              <h3 className="font-semibold mb-2" style={{ color: '#1a4d2e' }}>{f.titulo}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#4b5563' }}>{f.descripcion}</p>
             </div>
           ))}
         </div>
 
-        {/* ── Qué es / Qué no es ── */}
-        <div className="mb-20">
+        {/* ── ¿Por qué Radar? ── */}
+        <div className="mb-14">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all hover:scale-[1.01]"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all"
             style={{
-              backgroundColor: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              color: '#9ca3af',
+              backgroundColor: '#f9fafb',
+              border: '1px solid #e5e7eb',
+              color: '#4b5563',
             }}
           >
-            ¿Por qué Radar Circular?
+            ¿Por qué Radar?
             <ChevronDown
               size={18}
               className="transition-transform"
@@ -134,27 +146,27 @@ export function Landing() {
             <div
               className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-xl"
               style={{
-                backgroundColor: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                backgroundColor: '#f9fafb',
+                border: '1px solid #e5e7eb',
               }}
             >
               <div>
-                <h4 className="font-semibold mb-3" style={{ color: '#a8d5ba' }}>Qué es</h4>
-                <ul className="space-y-2">
+                <h4 className="font-semibold mb-3" style={{ color: '#1a4d2e' }}>Qué es</h4>
+                <ul className="space-y-2.5">
                   {queEs.map((item, i) => (
-                    <li key={i} className="flex gap-2 text-sm" style={{ color: '#9ca3af' }}>
-                      <span style={{ color: '#2d7a4f' }}>+</span>
+                    <li key={i} className="flex gap-2 text-sm leading-relaxed" style={{ color: '#374151' }}>
+                      <span className="shrink-0 mt-0.5" style={{ color: '#2d7a4f' }}>+</span>
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-3" style={{ color: '#9ca3af' }}>Qué no es</h4>
-                <ul className="space-y-2">
+                <h4 className="font-semibold mb-3" style={{ color: '#6b7280' }}>Qué no es</h4>
+                <ul className="space-y-2.5">
                   {queNoEs.map((item, i) => (
-                    <li key={i} className="flex gap-2 text-sm" style={{ color: '#6b7280' }}>
-                      <span style={{ color: '#6b7280' }}>—</span>
+                    <li key={i} className="flex gap-2 text-sm leading-relaxed" style={{ color: '#6b7280' }}>
+                      <span className="shrink-0 mt-0.5">—</span>
                       {item}
                     </li>
                   ))}
@@ -163,17 +175,17 @@ export function Landing() {
             </div>
           )}
         </div>
-
-        {/* ── Footer ── */}
-        <footer className="text-center space-y-2 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <p className="text-xs" style={{ color: '#6b7280' }}>
-            © 2026 Tercera Letra SpA. Todos los derechos reservados.
-          </p>
-          <p className="text-xs" style={{ color: '#4b5563' }}>
-            Datos oficiales que se actualizan según estén disponibles.
-          </p>
-        </footer>
       </div>
+
+      {/* ── Footer ── */}
+      <footer className="text-center py-8" style={{ backgroundColor: '#f3f4f6' }}>
+        <p className="text-xs" style={{ color: '#6b7280' }}>
+          © 2026 Tercera Letra SpA. Todos los derechos reservados.
+        </p>
+        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>
+          Datos oficiales cruzados y contextualizados con inteligencia artificial.
+        </p>
+      </footer>
     </div>
   )
 }
