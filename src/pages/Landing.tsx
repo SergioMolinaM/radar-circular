@@ -53,7 +53,7 @@ const queNoEs = [
 /* Ícono radar: anillos concéntricos SVG — blanco para hero oscuro */
 function RadarIcon() {
   return (
-    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="64" height="64" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="40" r="36" stroke="#ffffff" strokeWidth="1.5" opacity="0.3" />
       <circle cx="40" cy="40" r="26" stroke="#ffffff" strokeWidth="1.5" opacity="0.5" />
       <circle cx="40" cy="40" r="16" stroke="#ffffff" strokeWidth="1.5" opacity="0.7" />
@@ -71,32 +71,32 @@ export function Landing() {
 
       {/* ── Hero verde oscuro ── */}
       <div style={{ background: 'linear-gradient(180deg, #1a4d2e 0%, #2d7a4f 100%)' }}>
-        <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-14 pb-16">
-          <div className="text-center space-y-5">
-            <div className="flex justify-center">
+        <div className="max-w-5xl mx-auto px-6 pt-8 md:pt-10 pb-10">
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
               <RadarIcon />
             </div>
-            <h1 className="text-4xl md:text-5xl tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl tracking-tight text-white mb-3">
               <span className="font-bold">Radar</span>{' '}
               <span className="font-light">Circular</span>
             </h1>
-            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
-              La Ley REP obliga a los productores a hacerse cargo de sus envases y embalajes,
-              neumáticos fuera de uso y otros productos prioritarios. Los datos de cumplimiento
-              son públicos, pero están dispersos en diversos organismos.
-              Radar Circular los cruza y los hace accesibles.
+            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              La Ley REP obliga a las empresas responsables de envases y embalajes, neumáticos,
+              aceites lubricantes, aparatos eléctricos y electrónicos, pilas, baterías y textiles
+              a hacerse cargo de la gestión de los residuos derivados de esos productos.
+              Pero la información sobre metas, trazabilidad, fiscalización y cumplimiento de este
+              mandato sigue dispersa en distintas plataformas y registros públicos.
+              Radar Circular la reúne, la cruza y la convierte en información clara, ordenada y accesible.
             </p>
-            <div className="pt-2">
-              <Link
-                to="/panel"
-                className="inline-block px-8 py-3 rounded-xl font-semibold text-lg transition-all hover:shadow-lg"
-                style={{ backgroundColor: '#ffffff', color: '#1a4d2e' }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#f0fdf4')}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#ffffff')}
-              >
-                Ingresar al Radar
-              </Link>
-            </div>
+            <Link
+              to="/panel"
+              className="inline-block px-8 py-3 rounded-xl font-semibold text-lg transition-all hover:shadow-lg"
+              style={{ backgroundColor: '#ffffff', color: '#1a4d2e' }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#f0fdf4')}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#ffffff')}
+            >
+              Ingresar al Radar
+            </Link>
           </div>
         </div>
       </div>
