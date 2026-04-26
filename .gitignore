@@ -28,3 +28,5 @@ dist-ssr
 
 # Raw data files (XLSX, CSV)
 data-raw/
+
+AUDITORIA-dump-*.txt

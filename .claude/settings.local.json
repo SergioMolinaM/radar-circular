@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(npm install:*)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/caracena/chile-geojson/master/regiones.json\" -o /c/Users/molin/Code/tercera-letra/radar-circular/public/chile-regiones.geojson)",
+      "Bash(python3 -c \"from PIL import Image; print\\('pillow ok'\\)\")",
+      "Bash(convert --version)",
+      "Bash(magick --version)"
+    ]
+  }
+}
