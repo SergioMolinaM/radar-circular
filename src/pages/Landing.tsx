@@ -6,18 +6,18 @@ import { BarChart3, Map, TrendingUp, Globe, Scale, ShieldCheck, ChevronDown } fr
 const fichas = [
   {
     icon: BarChart3,
-    titulo: 'Seis fuentes, una interfaz',
-    descripcion: 'Decretos MMA, RETC, SNIFA, datos de SIG, estudios de mercado y registros de Contraloría. Cruzados y contextualizados para que no tengas que hacerlo tú.',
+    titulo: 'Datos públicos, accesibles',
+    descripcion: 'La información existe en el RETC, SNIFA, SMA y otros organismos. Radar la reúne, la cruza y la presenta con trazabilidad completa: cada cifra identifica su fuente oficial y año.',
   },
   {
     icon: Map,
     titulo: 'Mapa territorial',
-    descripcion: '52 comunas con recolección domiciliaria, 102 instalaciones de valorización de envases y 29 de neumáticos. Coordenadas reales, no estimaciones.',
+    descripcion: 'Dónde se recoge y dónde se valoriza. Cobertura domiciliaria por comuna, instalaciones de valorización de envases y de neumáticos con coordenadas reales del RETC.',
   },
   {
     icon: TrendingUp,
     titulo: 'Contexto de mercado',
-    descripcion: '1,96 millones de toneladas de envases en Chile. Solo un tercio se valoriza. Más de la mitad del reciclaje ocurre fuera del sistema formal de la Ley REP.',
+    descripcion: '1,96 millones de toneladas de envases al año. Solo un tercio se recicla y más de la mitad de ese reciclaje ocurre fuera del sistema formal. Datos estimados del mercado con advertencia explícita.',
   },
   {
     icon: Globe,
@@ -27,12 +27,12 @@ const fichas = [
   {
     icon: Scale,
     titulo: 'Marco regulatorio al día',
-    descripcion: 'DS12 envases, DS8 neumáticos, DS47 aceites, P+AEE en trámite. Estado actualizado de cada decreto, plazos y metas vigentes.',
+    descripcion: 'Envases, neumáticos, aceites lubricantes, aparatos eléctricos. Estado de cada decreto, plazos de cumplimiento y metas vigentes. Actualizado cuando hay novedades oficiales.',
   },
   {
     icon: ShieldCheck,
-    titulo: 'Trazabilidad total',
-    descripcion: 'Cada cifra identifica su fuente oficial y año. Sin datos inventados, sin estimaciones sin advertencia. Lo que no se puede verificar, no se publica.',
+    titulo: 'Sin datos inventados',
+    descripcion: 'Cada cifra identifica su fuente oficial y año. Las estimaciones se presentan como tales, con advertencia visible. Lo que no se puede verificar, no se publica.',
   },
 ]
 
@@ -82,8 +82,9 @@ export function Landing() {
               <span style={{ color: '#1f2937' }}>Circular</span>
             </h1>
             <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#4b5563' }}>
-              Información pública dispersa, transformada en inteligencia accesible y verificada.
-              Seis fuentes oficiales cruzadas en una sola interfaz.
+              La Ley REP obliga a los productores a hacerse cargo de sus envases, neumáticos y otros residuos.
+              Los datos de cumplimiento son públicos, pero están dispersos en seis organismos distintos.
+              Radar los cruza y los hace accesibles para todos.
             </p>
             <div className="pt-2">
               <Link
