@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radar Circular — Información REP abierta para Chile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C1810;--bg-alt:#111F17;--surface:#162B1E;--border:#2A4D36;--border-s:#1E3828;--text:#E8F0EB;--muted:#8FAA96;--dim:#5D7A65;--accent:#4ADE80;--accent-glow:rgba(74,222,128,.12);--warn:#FACC15;--danger:#EF4444;--safe:#4ADE80;--danger-bg:rgba(239,68,68,.12);--safe-bg:rgba(74,222,128,.12);--warn-bg:rgba(250,204,21,.12);--fd:'DM Serif Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;--fm:'JetBrains Mono',monospace;--mw:1020px;--r:8px;--rl:14px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+.c{max-width:var(--mw);margin:0 auto;padding:0 24px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:60px 0}
+.hero::before{content:'';position:absolute;top:-20%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(74,222,128,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-family:var(--fd);font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:1.1;margin-bottom:20px;animation:up .8s ease .05s both}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:600px;margin-bottom:40px;animation:up .8s ease .15s both}
+.hero-smalls{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;animation:up .8s ease .25s both}
+.hero-smalls .hs{background:var(--surface);border:1px solid var(--border-s);border-radius:var(--r);padding:12px 14px}
+.hero-smalls .hs .n{font-family:var(--fm);font-size:1.05rem;font-weight:500;color:var(--accent);display:block;margin-bottom:3px}
+.hero-smalls .hs .l{font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;line-height:1.4}
+@media(max-width:768px){.hero-smalls{grid-template-columns:1fr 1fr}}
+nav.tn{position:sticky;top:0;z-index:100;background:rgba(12,24,16,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-s);padding:10px 0}
+nav .c{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tl{color:var(--dim);text-decoration:none;font-size:.76rem;font-weight:500;padding:5px 12px;border-radius:100px;white-space:nowrap;transition:all .2s;letter-spacing:.02em}
+.tl:hover,.tl.active{color:var(--accent);background:var(--accent-glow)}
+section{padding:64px 0;border-top:1px solid var(--border-s)}
+.sl{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sl::before{content:'';width:20px;height:1px;background:var(--accent)}
+section h2{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;margin-bottom:14px}
+section h3{font-family:var(--fd);font-size:1.2rem;margin:28px 0 10px}
+section p{color:var(--muted);margin-bottom:14px;max-width:68ch}
+.lead{font-size:1.05rem;color:var(--text);max-width:68ch;margin-bottom:28px}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px}
+.cd{background:var(--surface);border:1px solid var(--border-s);border-radius:var(--rl);padding:24px;transition:border-color .3s}
+.cd:hover{border-color:var(--border)}
+.cd h4{font-size:.95rem;font-weight:600;margin-bottom:6px}
+.cd p{font-size:.88rem;color:var(--muted);margin:0}
+.tw{overflow-x:auto;margin:20px 0;border-radius:var(--rl);border:1px solid var(--border-s)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead{background:var(--surface)}
+th{text-align:left;padding:12px 14px;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--border-s);color:var(--muted)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(74,222,128,.03)}
+.nc{font-family:var(--fm);font-size:.83rem;text-align:right}
+.sok{color:var(--safe)}.sw{color:var(--warn)}.sf{color:var(--danger)}
+.sb{display:inline-block;padding:2px 9px;border-radius:100px;font-size:.72rem;font-weight:600}
+.sb.ok{background:var(--safe-bg);color:var(--safe)}.sb.w{background:var(--warn-bg);color:var(--warn)}.sb.f{background:var(--danger-bg);color:var(--danger)}
+.co{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:20px 0}
+.co.warn{border-left-color:var(--warn)}.co.danger{border-left-color:var(--danger)}
+.co strong{display:block;font-size:.88rem;margin-bottom:4px;color:var(--text)}
+.co p{font-size:.88rem;margin:0}
+.kr{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:20px 0}
+.kp{background:var(--surface);border:1px solid var(--border-s);border-radius:var(--r);padding:18px;text-align:center}
+.kp .b{font-family:var(--fm);font-size:1.8rem;font-weight:500;display:block;margin-bottom:2px}
+.kp .s{font-size:.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.ti{background:var(--bg-alt);border:1px solid var(--border-s);border-radius:var(--r);padding:14px}
+.ti .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:3px}
+.ti .v{font-family:var(--fm);font-size:.85rem;color:var(--text)}
+.fc{padding:100px 0;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,#0F2418 25%,#132E1C 75%,var(--bg) 100%);border-top:none}
+.fc h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);margin-bottom:20px}
+.fc p{color:var(--muted);max-width:520px;margin:0 auto 28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;padding:13px 28px;border-radius:100px;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+.btn-p{background:var(--accent);color:var(--bg)}.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(74,222,128,.25)}
+.btn-s{background:transparent;border:1px solid var(--border);color:var(--text);margin-left:10px}.btn-s:hover{border-color:var(--accent);color:var(--accent)}
+.app-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+.app-link:hover{border-bottom-color:var(--accent)}
+.app-link::after{content:'\2192';transition:transform .2s}
+.app-link:hover::after{transform:translateX(3px)}
+.ft{padding:56px 0;text-align:center;font-size:.75rem;color:var(--dim);border-top:1px solid var(--border-s)}
+@media(max-width:768px){.cg{grid-template-columns:1fr}section{padding:40px 0}.c{padding:0 16px}table{font-size:.78rem}th,td{padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="c">
+    <h1>Radar Circular<br><span>Información REP abierta</span><br>para Chile</h1>
+    <p class="hero-sub">Plataforma de acceso libre que integra, visualiza y pone a disposición de la ciudadanía los datos de cumplimiento de la Ley REP. Fuentes oficiales trazables. Sin costo.</p>
+    <div class="hero-smalls">
+      <div class="hs"><span class="n">6 productos regulados</span><span class="l">Envases, neumáticos, aceites, aparatos eléctricos, baterías y textiles</span></div>
+      <div class="hs"><span class="n">+20.000 productores</span><span class="l">Regulados y obligados a financiar la gestión de sus residuos</span></div>
+      <div class="hs"><span class="n">1 dashboard</span><span class="l">Con toda la información disponible del MMA, SMA, SNIFA, RETC, Kyklos, ANIR, CORFO y BCN</span></div>
+      <div class="hs"><span class="n">0 costo</span><span class="l">Acceso abierto y sin registro para el usuario</span></div>
+    </div>
+  </div>
+</div>
+
+<nav class="tn"><div class="c">
+  <a class="tl" href="#que">Qué es</a>
+  <a class="tl" href="#pp">Productos prioritarios</a>
+  <a class="tl" href="#brecha">La brecha</a>
+  <a class="tl" href="#eye">EyE en detalle</a>
+  <a class="tl" href="#fuentes">Fuentes</a>
+  <a class="tl" href="#tech">Arquitectura</a>
+  <a class="tl" href="#contacto">Contacto</a>
+</div></nav>
+
+<section id="que"><div class="c">
+  <div class="sl">El proyecto</div>
+  <h2>Democratizar la información de la Ley REP</h2>
+  <p class="lead">Chile tiene datos de reciclaje dispersos en SINADER, SISREP, RETC, SNIFA, estudios sectoriales y reportes de cada Sistema de Gestión. Radar Circular los reúne, los cruza y los presenta de forma abierta para que cualquier persona pueda entender qué está pasando con los residuos en el país.</p>
+  <div class="cg">
+    <div class="cd">
+      <h4>No evaluamos. Mostramos.</h4>
+      <p>Radar no es consultoría ni fiscalización. Es una capa de transparencia que hace legible un sistema regulatorio complejo, con datos trazables a su fuente oficial.</p>
+    </div>
+    <div class="cd">
+      <h4>Acceso libre, costo cero</h4>
+      <p>La plataforma es pública y gratuita. Cada dato lleva un badge de origen: fuente oficial, estimación sectorial o declaración de actor. Nada sin respaldo.</p>
+    </div>
+    <div class="cd">
+      <h4>Lo que la app tiene y este documento no</h4>
+      <p>Charts interactivos, trayectoria de metas con toggle por material, 19 hitos regulatorios hasta 2035, glosario, panel privado para SIG y módulo de afiliados.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="pp"><div class="c">
+  <div class="sl">Cobertura</div>
+  <h2>Seis productos prioritarios, un solo lugar</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Producto</th><th>Decreto</th><th>Estado</th><th>En Radar</th></tr></thead>
+    <tbody>
+      <tr><td>Envases y Embalajes</td><td>DS 12/2020</td><td><span class="sb ok">Vigente</span></td><td>Completo</td></tr>
+      <tr><td>Neumáticos (NFU)</td><td>DS 8/2019</td><td><span class="sb ok">Vigente</span></td><td>Completo</td></tr>
+      <tr><td>Aceites Lubricantes</td><td>DS 47/2023</td><td><span class="sb w">Ene 2027</span></td><td>Parcial</td></tr>
+      <tr><td>Aparatos Eléctricos</td><td>Pendiente DO</td><td><span class="sb w">Contraloría abr 2026</span></td><td>Parcial</td></tr>
+      <tr><td>Baterías (BFU)</td><td>Anteproyecto</td><td><span class="sb f">Consulta cerrada</span></td><td>Contexto</td></tr>
+      <tr><td>Textiles</td><td>Expediente</td><td><span class="sb f">Elaboración</span></td><td>Contexto</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cada producto tiene su página dedicada con metas, estado de SIG, datos de gestión y alertas regulatorias. <a class="app-link" href="https://radar-circular.cl/panel" target="_blank">Ver en la app</a></p>
+</div></section>
+
+<section id="brecha"><div class="c">
+  <div class="sl">El dato central</div>
+  <h2>Más de la mitad del reciclaje es invisible</h2>
+  <p class="lead">El cuello de botella de la Ley REP no es de infraestructura. Chile tiene capacidad técnica instalada para cumplir la mayoría de las metas. El problema es de captación, trazabilidad y formalización: hay tonelaje que se recicla pero que el sistema regulatorio no ve.</p>
+  <div class="kr">
+    <div class="kp"><span class="b" style="color:var(--safe)">646.985</span><span class="s">Ton. EyE gestionadas (Kyklos 2024)</span></div>
+    <div class="kp"><span class="b" style="color:var(--warn)">~281.000</span><span class="s">Ton. reportadas por SIG a SMA</span></div>
+    <div class="kp"><span class="b" style="color:var(--danger)">~366.000</span><span class="s">Ton. invisibles para el regulador</span></div>
+  </div>
+  <p>Radar Circular pone estos tres escenarios de medición lado a lado para que cada actor saque sus propias conclusiones.</p>
+  <div class="co"><strong>Fuente</strong><p>Estudio Kyklos 2024 - Estadísticas del Reciclaje, Preliminar EyE. Encargado por ANIR-ReSimple. Disponible en la app con desglose por material y escenario.</p></div>
+</div></section>
+
+<section id="eye"><div class="c">
+  <div class="sl">Muestra de profundidad</div>
+  <h2>Envases y Embalajes: primer año con datos públicos (2024)</h2>
+  <p>Las metas de recolección y valorización de envases comenzaron en octubre de 2023, por lo que 2024 es el primer año calendario completo con datos públicos de cumplimiento. La tabla compara dos mediciones: lo que los Sistemas de Gestión reportan oficialmente a la Superintendencia del Medio Ambiente (reporte oficial), y lo que la industria del reciclaje gestiona en total según Kyklos/ANIR (gestión real).</p>
+
+  <h3>Envases domiciliarios</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Material</th><th class="nc">Meta legal</th><th class="nc">Reporte oficial</th><th class="nc">Gestión real</th><th>Cumplimiento oficial</th></tr></thead>
+    <tbody>
+      <tr><td>Papel y cartón</td><td class="nc">5%</td><td class="nc sok">10,3%</td><td class="nc sok">47,5%</td><td><span class="sb ok">Cumple</span></td></tr>
+      <tr><td>Cartón p/líquidos</td><td class="nc">5%</td><td class="nc sf">1,5%</td><td class="nc sf">3,2%</td><td><span class="sb f">No cumple</span></td></tr>
+      <tr><td>Metal</td><td class="nc">6%</td><td class="nc sf">0,3%</td><td class="nc sok">11,7%</td><td><span class="sb f">No cumple</span></td></tr>
+      <tr><td>Plástico</td><td class="nc">3%</td><td class="nc sf">1,6%</td><td class="nc sok">8,1%</td><td><span class="sb f">No cumple</span></td></tr>
+      <tr><td>Vidrio</td><td class="nc">11%</td><td class="nc sf">5,9%</td><td class="nc sok">22,4%</td><td><span class="sb f">No cumple</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Envases no domiciliarios</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Material</th><th class="nc">Meta legal</th><th class="nc">Reporte oficial</th><th class="nc">Gestión real</th><th>Cumplimiento oficial</th></tr></thead>
+    <tbody>
+      <tr><td>Papel y cartón</td><td class="nc">48%</td><td class="nc sok">55,5%</td><td class="nc sok">49,3%</td><td><span class="sb ok">Cumple</span></td></tr>
+      <tr><td>Plástico</td><td class="nc">13%</td><td class="nc sok">24,8%</td><td class="nc sok">49,3%</td><td><span class="sb ok">Cumple</span></td></tr>
+      <tr><td>Metal</td><td class="nc">23%</td><td class="nc sok">38,3%</td><td class="nc sok">38,4%</td><td><span class="sb ok">Cumple</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="co danger"><strong>Lectura</strong><p>En envases domiciliarios, el reporte oficial muestra incumplimiento en 4 de 5 materiales. Pero la gestión real del país supera las metas en casi todos. La diferencia: hay reciclaje que ocurre fuera del sistema formal y que el regulador no contabiliza. En no domiciliarios, se cumple en todos los materiales.</p></div>
+
+  <div class="co warn"><strong>2027: fin de compensación cruzada</strong><p>El DS 12/2020 permite compensar metas entre materiales hasta 2026. Desde 2027, cada subcategoría debe cumplir por sí misma. Las metas escalan hasta 85% en no domiciliarios y 70% en domiciliarios al final del decreto. La trayectoria completa está en la app.</p></div>
+
+  <p style="font-size:.78rem;color:var(--dim);margin-top:16px">2024 es el primer año con información pública disponible bajo la Ley REP. La plataforma se actualizará cuando se publiquen los datos oficiales de 2025.</p>
+
+  <p style="margin-top:16px"><a class="app-link" href="https://radar-circular.cl/panel" target="_blank">Explorar el análisis completo en Radar Circular</a></p>
+</div></section>
+
+<section id="fuentes"><div class="c">
+  <div class="sl">Fuentes de datos</div>
+  <h2>Fuentes integradas en la plataforma</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Fuente</th><th>Datos</th><th>Estado</th></tr></thead>
+    <tbody>
+      <tr><td>Kyklos/ANIR 2024</td><td>Tonelaje EyE, 3 escenarios, CTIP</td><td><span class="sb ok">Integrado</span></td></tr>
+      <tr><td>DS 12, DS 8, DS 47</td><td>Metas por material y año</td><td><span class="sb ok">Integrado</span></td></tr>
+      <tr><td>MEP CORFO</td><td>Trabas, propuestas, actores</td><td><span class="sb ok">Integrado</span></td></tr>
+      <tr><td>SMA / SNIFA</td><td>Sancionatorios REP</td><td><span class="sb ok">Integrado</span></td></tr>
+      <tr><td>RETC Open Data</td><td>SIG aprobados</td><td><span class="sb w">En proceso</span></td></tr>
+      <tr><td>SISREP / SINADER</td><td>Reportes MMA/SMA</td><td><span class="sb w">En proceso</span></td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="tech"><div class="c">
+  <div class="sl">Para el equipo técnico</div>
+  <h2>Arquitectura y stack</h2>
+  <p>SPA moderna con deploy continuo y costo operativo cero. Datos en módulos TypeScript tipados con fuente documentada por archivo.</p>
+  <div class="tg">
+    <div class="ti"><div class="k">Frontend</div><div class="v">React 18 + Vite + TS + Tailwind</div></div>
+    <div class="ti"><div class="k">Charts</div><div class="v">Recharts (Line, Bar, Responsive)</div></div>
+    <div class="ti"><div class="k">Deploy</div><div class="v">Netlify CI/CD desde GitHub main</div></div>
+    <div class="ti"><div class="k">Dominio</div><div class="v">radar-circular.cl</div></div>
+    <div class="ti"><div class="k">Datos</div><div class="v">src/data/*.ts tipados, trazables</div></div>
+    <div class="ti"><div class="k">Auth (MVP)</div><div class="v">localStorage, luego Supabase</div></div>
+    <div class="ti"><div class="k">Rutas</div><div class="v">12+ páginas, sidebar responsive</div></div>
+    <div class="ti"><div class="k">Costo</div><div class="v">$0 USD/mes (free tiers)</div></div>
+  </div>
+  <p style="font-size:.85rem;color:var(--dim);margin-top:14px">Repo: github.com/SergioMolinaM/radar-circular — 15 fases completadas</p>
+</div></section>
+
+<section id="contacto" class="fc"><div class="c">
+  <div class="sl" style="justify-content:center">Colaborar</div>
+  <h2>Radar Circular busca aliados</h2>
+  <p>Colaboración en acceso a datos, revisión técnica y financiamiento para integración programática (RETC, SNIFA, SISREP). Si trabajas en reciclaje, regulación ambiental o datos públicos, conversemos.</p>
+  <div>
+    <a class="btn btn-p" href="mailto:sergio.molina@terceraletra.cl">Escribir a Tercera Letra</a>
+  </div>
+  <a class="btn btn-s" href="https://radar-circular.cl" target="_blank" style="margin-top:16px;margin-left:0;font-size:1.05rem;padding:16px 40px">Ver Radar Circular</a>
+</div></section>
+
+<footer class="ft"><div class="c">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" style="width:360px;height:auto;margin-bottom:20px;opacity:.7">
+    <g font-family="Fraunces, Georgia, serif" font-weight="400" font-size="120" style="letter-spacing:-0.02em;">
+      <text x="60" y="140" fill="#F4F1EA">Tercera</text>
+      <text x="460" y="140" fill="#D64A1E">Letra</text>
+    </g>
+    <rect x="60" y="160" width="340" height="6" fill="#D64A1E"></rect>
+    <text x="60" y="210" font-family="'JetBrains Mono', monospace" font-size="18" letter-spacing="3.6" fill="#F4F1EA" style="text-transform:uppercase;">NARRATIVA · EVIDENCIA · TECNOLOGÍA</text>
+  </svg>
+  <div>© 2026 Tercera Letra · Santiago, Chile · Todos los derechos reservados</div>
+</div></footer>
+
+<script>
+document.querySelectorAll('section[id]').forEach(s=>{
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.tl').forEach(l=>l.classList.remove('active'));const a=document.querySelector('.tl[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}})},{rootMargin:'-20% 0px -70% 0px'}).observe(s)
+});
+</script>
+</body>
+</html>
