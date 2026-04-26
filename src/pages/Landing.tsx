@@ -50,15 +50,15 @@ const queNoEs = [
   'No reemplaza al RETC, SNIFA ni SISREP — los hace accesibles',
 ]
 
-/* Ícono radar: anillos concéntricos SVG */
+/* Ícono radar: anillos concéntricos SVG — blanco para hero oscuro */
 function RadarIcon() {
   return (
     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="40" r="36" stroke="#2d7a4f" strokeWidth="1.5" opacity="0.25" />
-      <circle cx="40" cy="40" r="26" stroke="#2d7a4f" strokeWidth="1.5" opacity="0.45" />
-      <circle cx="40" cy="40" r="16" stroke="#2d7a4f" strokeWidth="1.5" opacity="0.7" />
-      <circle cx="40" cy="40" r="5" fill="#2d7a4f" />
-      <line x1="40" y1="40" x2="62" y2="22" stroke="#a8d5ba" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="40" cy="40" r="36" stroke="#ffffff" strokeWidth="1.5" opacity="0.3" />
+      <circle cx="40" cy="40" r="26" stroke="#ffffff" strokeWidth="1.5" opacity="0.5" />
+      <circle cx="40" cy="40" r="16" stroke="#ffffff" strokeWidth="1.5" opacity="0.7" />
+      <circle cx="40" cy="40" r="5" fill="#ffffff" />
+      <line x1="40" y1="40" x2="62" y2="22" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }
@@ -67,32 +67,32 @@ export function Landing() {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div style={{ minHeight: '100vh' }}>
-      {/* Hero con gradiente verde suave */}
-      <div style={{ background: 'linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%)' }}>
-        <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-14 pb-12">
+    <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
 
-          {/* ── Header ── */}
-          <div className="text-center space-y-5 mb-14">
+      {/* ── Hero verde oscuro ── */}
+      <div style={{ background: 'linear-gradient(180deg, #1a4d2e 0%, #2d7a4f 100%)' }}>
+        <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-14 pb-16">
+          <div className="text-center space-y-5">
             <div className="flex justify-center">
               <RadarIcon />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              <span style={{ color: '#1a4d2e' }}>Radar</span>{' '}
-              <span style={{ color: '#1f2937' }}>Circular</span>
+            <h1 className="text-4xl md:text-5xl tracking-tight text-white">
+              <span className="font-bold">Radar</span>{' '}
+              <span className="font-light">Circular</span>
             </h1>
-            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#4b5563' }}>
-              La Ley REP obliga a los productores a hacerse cargo de sus envases, neumáticos y otros residuos.
-              Los datos de cumplimiento son públicos, pero están dispersos en seis organismos distintos.
-              Radar los cruza y los hace accesibles para todos.
+            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              La Ley REP obliga a los productores a hacerse cargo de sus envases y embalajes,
+              neumáticos fuera de uso y otros productos prioritarios. Los datos de cumplimiento
+              son públicos, pero están dispersos en diversos organismos.
+              Radar Circular los cruza y los hace accesibles.
             </p>
             <div className="pt-2">
               <Link
                 to="/panel"
-                className="inline-block px-8 py-3 rounded-xl text-white font-semibold text-lg transition-all hover:shadow-lg"
-                style={{ backgroundColor: '#2d7a4f' }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#1a4d2e')}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#2d7a4f')}
+                className="inline-block px-8 py-3 rounded-xl font-semibold text-lg transition-all hover:shadow-lg"
+                style={{ backgroundColor: '#ffffff', color: '#1a4d2e' }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#f0fdf4')}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#ffffff')}
               >
                 Ingresar al Radar
               </Link>
@@ -101,10 +101,15 @@ export function Landing() {
         </div>
       </div>
 
-      {/* Contenido sobre fondo blanco */}
-      <div className="max-w-5xl mx-auto px-6 pb-12">
+      {/* ── Wave de transición hero → blanco ── */}
+      <div style={{ background: 'linear-gradient(180deg, #2d7a4f 0%, #2d7a4f 100%)', marginTop: -1 }}>
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+          <path d="M0,0 C480,120 960,120 1440,0 L1440,120 L0,120 Z" fill="#ffffff" />
+        </svg>
+      </div>
 
-        {/* ── Grid de fichas ── */}
+      {/* ── Tarjetas sobre fondo blanco ── */}
+      <div className="max-w-5xl mx-auto px-6 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {fichas.map((f) => (
             <div
@@ -113,13 +118,20 @@ export function Landing() {
               style={{
                 backgroundColor: '#ffffff',
                 border: '1px solid #e5e7eb',
+                borderRadius: 12,
               }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = '#a8d5ba')}
-              onMouseLeave={e => (e.currentTarget.style.borderColor = '#e5e7eb')}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'rgba(45,122,79,0.3)'
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = '#e5e7eb'
+                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'
+              }}
             >
-              <f.icon size={24} style={{ color: '#2d7a4f' }} className="mb-3" />
+              <f.icon size={32} style={{ color: '#2d7a4f' }} className="mb-3" />
               <h3 className="font-semibold mb-2" style={{ color: '#1a4d2e' }}>{f.titulo}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#4b5563' }}>{f.descripcion}</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#374151' }}>{f.descripcion}</p>
             </div>
           ))}
         </div>
@@ -130,9 +142,9 @@ export function Landing() {
             onClick={() => setExpanded(!expanded)}
             className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all"
             style={{
-              backgroundColor: '#f9fafb',
-              border: '1px solid #e5e7eb',
-              color: '#4b5563',
+              backgroundColor: '#f0fdf4',
+              border: '1px solid #d1fae5',
+              color: '#1a4d2e',
             }}
           >
             ¿Por qué Radar?
@@ -147,8 +159,8 @@ export function Landing() {
             <div
               className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-xl"
               style={{
-                backgroundColor: '#f9fafb',
-                border: '1px solid #e5e7eb',
+                backgroundColor: '#f0fdf4',
+                border: '1px solid #d1fae5',
               }}
             >
               <div>
@@ -179,7 +191,7 @@ export function Landing() {
       </div>
 
       {/* ── Footer ── */}
-      <footer className="text-center py-8" style={{ backgroundColor: '#f3f4f6' }}>
+      <footer className="text-center py-8" style={{ backgroundColor: '#f0fdf4' }}>
         <p className="text-xs" style={{ color: '#6b7280' }}>
           © 2026 Tercera Letra SpA. Todos los derechos reservados.
         </p>
