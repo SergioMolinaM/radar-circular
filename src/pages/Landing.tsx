@@ -31,13 +31,13 @@ const fichas = [
   },
   {
     icon: ShieldCheck,
-    titulo: 'Sin datos inventados',
+    titulo: 'Trazabilidad total',
     descripcion: 'Cada cifra identifica su fuente oficial y año. Las estimaciones se presentan como tales, con advertencia visible. Lo que no se puede verificar, no se publica.',
   },
 ]
 
-const queEs = [
-  'Una capa de inteligencia sectorial sobre la Ley REP, construida con datos oficiales cruzados y contextualizados',
+const queEs: React.ReactNode[] = [
+  <>Una capa de inteligencia sectorial sobre la <strong>Ley REP</strong>, construida con datos oficiales cruzados y contextualizados</>,
   'Acceso abierto y gratuito a información que hoy requiere conocimiento especializado para encontrar y entender',
   'Una herramienta para reguladores, sistemas de gestión, productores, gestores, consultores y periodistas',
   'Independencia editorial completa: presenta hechos, no toma posición',
@@ -85,8 +85,8 @@ export function Landing() {
               <span className="font-bold">Radar</span>{' '}
               <span className="font-light">Circular</span>
             </h1>
-            <div className="max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-5 space-y-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
-              <p>La Ley REP obliga a las empresas responsables de envases y embalajes, neumáticos, aceites lubricantes, aparatos eléctricos y electrónicos, pilas, baterías y textiles a hacerse cargo de la gestión de los residuos derivados de esos productos.</p>
+            <div className="max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-5 space-y-3 text-justify" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p>La <strong>Ley REP</strong> obliga a las empresas responsables de envases y embalajes, neumáticos, aceites lubricantes, aparatos eléctricos y electrónicos, pilas, baterías y textiles a hacerse cargo de la gestión de los residuos derivados de esos productos.</p>
               <p>Pero la información sobre metas, trazabilidad, fiscalización y cumplimiento de este mandato sigue dispersa en distintas plataformas y registros públicos.</p>
               <p>Radar Circular la reúne, la cruza y la convierte en información clara, ordenada y accesible.</p>
             </div>
@@ -133,7 +133,7 @@ export function Landing() {
             >
               <f.icon size={32} style={{ color: '#2d7a4f' }} className="mb-3" />
               <h3 className="font-semibold mb-2" style={{ color: '#1a4d2e' }}>{f.titulo}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#374151' }}>{f.descripcion}</p>
+              <p className="text-sm leading-relaxed text-justify" style={{ color: '#374151' }}>{f.descripcion}</p>
             </div>
           ))}
         </div>
