@@ -85,14 +85,11 @@ export function Landing() {
               <span className="font-bold">Radar</span>{' '}
               <span className="font-light">Circular</span>
             </h1>
-            <p className="text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.85)' }}>
-              La Ley REP obliga a las empresas responsables de envases y embalajes, neumáticos,
-              aceites lubricantes, aparatos eléctricos y electrónicos, pilas, baterías y textiles
-              a hacerse cargo de la gestión de los residuos derivados de esos productos.
-              Pero la información sobre metas, trazabilidad, fiscalización y cumplimiento de este
-              mandato sigue dispersa en distintas plataformas y registros públicos.
-              Radar Circular la reúne, la cruza y la convierte en información clara, ordenada y accesible.
-            </p>
+            <div className="max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-5 space-y-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p>La Ley REP obliga a las empresas responsables de envases y embalajes, neumáticos, aceites lubricantes, aparatos eléctricos y electrónicos, pilas, baterías y textiles a hacerse cargo de la gestión de los residuos derivados de esos productos.</p>
+              <p>Pero la información sobre metas, trazabilidad, fiscalización y cumplimiento de este mandato sigue dispersa en distintas plataformas y registros públicos.</p>
+              <p>Radar Circular la reúne, la cruza y la convierte en información clara, ordenada y accesible.</p>
+            </div>
             <Link
               to="/panel"
               className="inline-block px-8 py-3 rounded-xl font-semibold text-lg transition-all hover:shadow-lg"
