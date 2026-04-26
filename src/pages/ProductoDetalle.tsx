@@ -92,7 +92,7 @@ export function ProductoDetalle() {
   const { id } = useParams()
   const pp = productosPrioritarios.find((p) => p.id === id)
 
-  if (!pp) return <Navigate to="/" replace />
+  if (!pp) return <Navigate to="/panel" replace />
 
   const estado = estadoLabel[pp.estadoDecreto]
   const contexto = id ? contextoAdicional[id] : undefined

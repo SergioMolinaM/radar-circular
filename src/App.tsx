@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ScrollToTop } from './components/ScrollToTop'
 import { Layout } from './components/Layout'
+import { Landing } from './pages/Landing'
 import { Home } from './pages/Home'
 import { Panorama } from './pages/Panorama'
 import { ProductoDetalle } from './pages/ProductoDetalle'
@@ -22,8 +23,12 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
+        {/* Landing pública (sin sidebar) */}
+        <Route index element={<Landing />} />
+
+        {/* App con sidebar */}
         <Route element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route path="panel" element={<Home />} />
           <Route path="panorama" element={<Panorama />} />
           <Route path="mapa" element={<MapaTerritorial />} />
           <Route path="fiscalizacion" element={<Fiscalizacion />} />

@@ -63,7 +63,7 @@ export function Sidebar() {
       {/* Home */}
       <nav className="flex flex-col gap-1">
         <NavLink
-          to="/"
+          to="/panel"
           className={linkClass}
           style={({ isActive }) => linkStyle(isActive)}
           end
