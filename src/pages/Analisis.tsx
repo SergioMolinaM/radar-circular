@@ -649,6 +649,173 @@ export function Analisis() {
       </div>
 
       {/* ════════════════════════════════════════════ */}
+      {/* PERCEPCIÓN SECTORIAL — PULSO CIRCULAR 2026  */}
+      {/* ════════════════════════════════════════════ */}
+      <div className="space-y-6">
+        <div className="flex items-center gap-3">
+          <h3 className="text-lg font-semibold" style={{ fontFamily: "'DM Serif Display', serif", color: 'var(--text-primary)' }}>
+            El sector lo dice
+          </h3>
+          <span
+            className="text-xs px-2 py-0.5 rounded-full font-medium"
+            style={{ backgroundColor: 'rgba(99,102,241,0.12)', color: '#4338ca' }}
+          >
+            Encuesta experta · Marzo 2026
+          </span>
+        </div>
+
+        <Callout variant="explainer" titulo="Sobre esta fuente">
+          Pulso Circular es una encuesta realizada en marzo 2026 por Ambidextro Economía Circular y País
+          Circular a un panel de 52 expertos multisectoriales vinculados a la Ley REP: productores,
+          gestores, sistemas de gestión, sector público, academia y gremios. Sus resultados son percepción
+          experta, no datos oficiales, pero constituyen la única medición sistemática de estado del
+          ecosistema REP en Chile a la fecha.
+        </Callout>
+
+        {/* Grid de datos clave */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            {
+              pct: '85%',
+              label: 'considera que la fiscalización de la SMA no es eficaz',
+              color: 'var(--red)',
+              bg: 'rgba(224,82,82,0.08)',
+              border: 'rgba(224,82,82,0.25)',
+            },
+            {
+              pct: '74%',
+              label: 'considera necesaria una plataforma centralizada de información REP',
+              color: '#4338ca',
+              bg: 'rgba(99,102,241,0.08)',
+              border: 'rgba(99,102,241,0.25)',
+            },
+            {
+              pct: '78%',
+              label: 'percibe que los decretos carecen de mecanismos de ajuste ágiles',
+              color: '#b45309',
+              bg: 'rgba(234,179,8,0.08)',
+              border: 'rgba(234,179,8,0.25)',
+            },
+            {
+              pct: '80%',
+              label: 'cree que el sistema REP se fortalecerá en los próximos 10 años',
+              color: 'var(--accent)',
+              bg: 'rgba(45,155,110,0.08)',
+              border: 'rgba(45,155,110,0.25)',
+            },
+          ].map(({ pct, label, color, bg, border }) => (
+            <div
+              key={pct + label}
+              className="p-4 rounded-xl flex flex-col gap-2"
+              style={{ backgroundColor: bg, border: `1px solid ${border}` }}
+            >
+              <p className="text-3xl font-bold leading-none" style={{ color }}>{pct}</p>
+              <p className="text-xs leading-snug" style={{ color: 'var(--text-secondary)' }}>{label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Hallazgo estructural destacado */}
+        <div
+          className="p-5 rounded-xl space-y-3"
+          style={{ backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-light)' }}
+        >
+          <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+            La paradoja de la percepción
+          </p>
+          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            El 63% del panel tiene percepción favorable del cumplimiento general de la Ley REP,
+            y el 80% confía en su fortalecimiento futuro. Sin embargo, en prácticamente todas las
+            dimensiones operativas —fiscalización, trazabilidad, licitaciones, gobernanza
+            interministerial— los porcentajes de desacuerdo son mayoría. El panel valida el diseño
+            de la política, no su ejecución.
+          </p>
+        </div>
+
+        {/* Evaluación de actores */}
+        <div className="space-y-3">
+          <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
+            Desempeño percibido por actor (escala 1–7)
+          </p>
+          <div className="overflow-x-auto rounded-xl" style={{ border: '1px solid var(--border)' }}>
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{ backgroundColor: 'var(--bg-elevated)' }}>
+                  <th className="text-left px-4 py-2.5 font-medium" style={{ color: 'var(--text-muted)' }}>Actor</th>
+                  <th className="text-right px-4 py-2.5 font-medium" style={{ color: 'var(--text-muted)' }}>Puntaje</th>
+                  <th className="text-left px-4 py-2.5 font-medium" style={{ color: 'var(--text-muted)' }}>Nivel</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { actor: 'Recicladores de base', pp: 5.07, nivel: 'Bueno', color: 'var(--accent)' },
+                  { actor: 'Gestores', pp: 4.75, nivel: 'Suficiente', color: 'var(--accent)' },
+                  { actor: 'Empresas Reguladas', pp: 4.46, nivel: 'Suficiente', color: 'var(--accent)' },
+                  { actor: 'TDLC', pp: 4.13, nivel: 'Suficiente', color: 'var(--text-secondary)' },
+                  { actor: 'Sistemas de Gestión', pp: 4.06, nivel: 'Suficiente', color: 'var(--text-secondary)' },
+                  { actor: 'Ministerio del Medio Ambiente', pp: 3.94, nivel: 'Insuficiente', color: 'var(--red)' },
+                  { actor: 'Municipalidades', pp: 3.73, nivel: 'Insuficiente', color: 'var(--red)' },
+                  { actor: 'Superintendencia del Medio Ambiente', pp: 3.46, nivel: 'Insuficiente', color: 'var(--red)' },
+                  { actor: 'Ciudadanía / Consumidores', pp: 3.25, nivel: 'Insuficiente', color: 'var(--red)' },
+                ].map((row, i) => (
+                  <tr
+                    key={row.actor}
+                    style={{
+                      backgroundColor: i % 2 === 0 ? 'var(--bg-surface)' : 'var(--bg-deep)',
+                      borderTop: '1px solid var(--border)',
+                    }}
+                  >
+                    <td className="px-4 py-2.5" style={{ color: 'var(--text-primary)' }}>{row.actor}</td>
+                    <td className="px-4 py-2.5 text-right font-mono font-bold text-sm" style={{ color: row.color }}>
+                      {row.pp.toFixed(2)}
+                    </td>
+                    <td className="px-4 py-2.5">
+                      <span
+                        className="text-xs px-2 py-0.5 rounded-full"
+                        style={{
+                          backgroundColor: row.pp >= 5 ? 'rgba(45,155,110,0.15)' : row.pp >= 4 ? 'rgba(234,179,8,0.12)' : 'rgba(224,82,82,0.12)',
+                          color: row.pp >= 5 ? 'var(--accent)' : row.pp >= 4 ? '#b45309' : 'var(--red)',
+                        }}
+                      >
+                        {row.nivel}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+            Escala: 1–3.9 Insuficiente · 4–4.9 Suficiente · 5–5.9 Bueno · 6–7 Excelente
+          </p>
+        </div>
+
+        {/* Nota de posicionamiento editorial — sin nombrar Radar */}
+        <div
+          className="p-4 rounded-lg"
+          style={{ borderLeft: '3px solid #4338ca', backgroundColor: 'var(--bg-surface)' }}
+        >
+          <p className="text-sm" style={{ color: 'var(--text-primary)' }}>
+            El 74% del panel considera necesaria una plataforma centralizada que reduzca las
+            asimetrías de información del mercado REP. Hoy coexisten cuatro sistemas de reporte
+            sin integración: SISREP (SMA), SINADER, SIDREP y REP-SG (MMA). Ninguno cumple la
+            función de visibilizar información de cumplimiento de manera accesible para las
+            empresas afiliadas.
+          </p>
+          <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
+            Fuente: Pulso Circular, Ambidextro / País Circular, marzo 2026
+          </p>
+        </div>
+
+        <FuenteDatos
+          fuente="Pulso Circular — Encuesta panel de expertos REP · Ambidextro Economía Circular + País Circular"
+          tipo="sectorial"
+          fecha="Marzo 2026"
+          nota="Percepción experta (n≈52). No constituye dato oficial. Los puntajes de desempeño por actor son autoevaluaciones cruzadas del mismo panel."
+        />
+      </div>
+
+      {/* ════════════════════════════════════════════ */}
       {/* TRABAS                                       */}
       {/* ════════════════════════════════════════════ */}
       <div className="space-y-6">
